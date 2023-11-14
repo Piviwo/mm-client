@@ -1,6 +1,6 @@
-import './App.css'
-import CartoMap from './components/map/Map.jsx'
-import Header from './components/header/Header.jsx'
+import './App.css';
+import CartoMap from './components/Map/CartoMap.jsx';
+import Header from './components/Navbar/header.jsx';
 
 function App() {
   return (
