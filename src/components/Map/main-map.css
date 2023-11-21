@@ -1,0 +1,31 @@
+div.maplibregl-popup{
+    max-width: 300px;
+}
+
+button.maplibregl-popup-close-button{
+    font-size: x-large;
+}
+
+.maplibregl-popup-content > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.popup-info-textbox{
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.popup-info-text{
+    display: flex;
+    margin: 0;
+    font-size: small;
+    font-family: "Poppins", sans-serif;
+
+    &:nth-child(1){
+        font-size: medium;
+    }
+}
+

@@ -7,10 +7,11 @@ import Map, {
   GeolocateControl
 } from 'react-map-gl/maplibre';
 import {useState, useMemo} from 'react';
-import Pin from './Pin.jsx';
+import Pin from './Pins/pin.jsx';
 import CITIES from '../../data/data.json';
+import './main-map.css'
 
-function CartoMap() {
+function MainMap() {
   const [popupInfo, setPopupInfo] = useState(null);
   const pins = useMemo(
     () =>
@@ -25,7 +26,7 @@ function CartoMap() {
             setPopupInfo(place);
           }}
         >
-          <Pin/>
+          <Pin type={place.type}/>
         </Marker>
       )),
     []
@@ -48,9 +49,11 @@ function CartoMap() {
             longitude={Number(popupInfo.longitude)}
             latitude={Number(popupInfo.latitude)}
             onClose={() => setPopupInfo(null)}
+            style={{maxWidth:'300px'}}
           >
-            <div>
-              {popupInfo.name}
+            <div className="popup-info-textbox">
+              <p className="popup-info-text">{popupInfo.name}</p>
+              <p className="popup-info-text">{popupInfo.type}</p>
             </div>
             <img width="100%" src={popupInfo.image} />
           </Popup>
@@ -59,4 +62,4 @@ function CartoMap() {
   );
 }
 
-export default CartoMap
+export default MainMap
