@@ -2,10 +2,10 @@ import React from "react";
 import './header.css'
 import Burger from "./BurgerMenu/burger";
 
-function Header() {
+function Header({setNavigation}) {
   return (
     <div className="nav-bar-container">
-      <Burger></Burger>
+      <Burger setNavigation={setNavigation}></Burger>
     </div>
   );
 }

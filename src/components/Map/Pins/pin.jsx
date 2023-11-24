@@ -11,7 +11,6 @@ import theatre from '../../../assets/theatre.svg';
 
 function Pin({type}) {
   let source;
-  console.log(type)
   if ( type == 'bar') {
       source = bar;
   } else if (type == 'cinema'){
@@ -23,7 +22,6 @@ function Pin({type}) {
   } else if (type == 'theatre'){
       source = theatre;
   }
-  console.log(source)
   return (
     /*<svg height={size} viewBox="0 0 24 24" class="pin">
       <path d={ICON} />
