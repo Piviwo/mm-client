@@ -6,13 +6,23 @@ import Map, {
   ScaleControl,
   GeolocateControl
 } from 'react-map-gl/maplibre';
-import {useState, useMemo} from 'react';
+import {useState, useEffect, useMemo} from 'react';
 import Pin from './Pins/pin.jsx';
 import CITIES from '../../data/data.json';
 import './main-map.css'
 
 function MainMap() {
   const [popupInfo, setPopupInfo] = useState(null);
+  const [places, setPlaces] = useState([{}]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/api').then(
+      response => response.json()
+    ).then(data => {
+      setPlaces(data)
+    })
+  }, [])
+
   const pins = useMemo(
     () =>
       CITIES.map((place, index) => (

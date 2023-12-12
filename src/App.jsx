@@ -2,7 +2,7 @@ import './App.css';
 import MainMap from './components/Map/main-map.jsx';
 import PlaceForm from './components/AddAPlace/new-place-form.jsx';
 import Header from './components/Navbar/header.jsx';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   const [navigation, setNavigation] = useState('MAP');

@@ -2,45 +2,37 @@ import React, { useState } from 'react';
 import './new-place-form.css';
 
 function PlaceForm() {
-  const [formData, setFormData] = useState({ name: '', image: '', type:'', latitude:'', longitude:'' });
+  const [formData, setFormData] = useState({ name: '', image: '', type: '', latitude: '', longitude: '' });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value});
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Assuming you have a JSON file named 'data.json'
-    const jsonFile = '../../data/data.json';
-
-    // Read the existing data from the JSON file
-    fetch(jsonFile)
-      .then((response) => response.json())
-      .then((data) => {
-        // Add the new information to the data array
-        data.push(formData);
-
-        // Write the updated data back to the JSON file
-        return fetch(jsonFile, {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        });
-      })
-      .then(() => {
-        console.log('Data added successfully!');
-        setFormData({ name: '', age: '' });
-      })
-      .catch((error) => console.error('Error:', error));
+    
+    const response = await fetch('http://localhost:3000/api/', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({...formData})
+    });
+  
+    if (response.ok) {
+      const jsonResponse = await response.json();
+      console.log(jsonResponse);
+      //setFormData({ name: '', image: '', type: '', latitude: '', longitude: '' });
+    } else {
+      console.error('Error:', response.status);
+    }
   };
 
   return (
     <div className='form-container'>
       <h2>add a new place</h2>
-      <form onSubmit={handleSubmit}>
+      <form action="" onSubmit={handleSubmit}>
         <label>
           name:
           <input
@@ -55,7 +47,7 @@ function PlaceForm() {
           image:
           <input
             type="text"
-            name="age"
+            name="image"
             value={formData.image}
             onChange={handleChange}
           />
@@ -65,17 +57,23 @@ function PlaceForm() {
           type:
           <select
             type="text"
-            name="age"
+            name="type"
             value={formData.type}
             onChange={handleChange}
-          />
+          >
+            <option value="" disabled>select a location type</option>
+            <option value="bar">bar</option>
+            <option value="cinema">cinema</option>
+            <option value="museum">museum</option>
+            <option value="restaurant">restaurant</option>
+          </select>
         </label>
         <br />
         <label>
           longitude:
           <input
             type="text"
-            name="age"
+            name="longitude"
             value={formData.longitude}
             onChange={handleChange}
           />
@@ -85,7 +83,7 @@ function PlaceForm() {
           latitude:
           <input
             type="text"
-            name="age"
+            name="latitude"
             value={formData.latitude}
             onChange={handleChange}
           />

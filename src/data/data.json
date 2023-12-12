@@ -1,5 +1,23 @@
 [
-    {"name":"Sehnsucht","image":"https://muenchen.mitvergnuegen.com/resizer/images/7b227769647468223a313238302c22686569676874223a3732307d/wp-content/uploads/sites/3/2016/10/395162_440514162681972_202852054_n.jpg.webp","type":"bar","latitude":48.147452932798025,"longitude":11.576528566308614},
-    {"name":"The High","image":"https://www.in-muenchen.de/assets/images/16/101/16101773-1390913650-the-high-bar-muenchen-2uQIjHSga8MH.jpg","type":"bar","latitude":48.13321504425681,"longitude":11.573056981917444},
-    {"name":"The High","image":"https://www.in-muenchen.de/assets/images/16/101/16101773-1390913650-the-high-bar-muenchen-2uQIjHSga8MH.jpg","type":"restaurant","latitude":50,"longitude":10}
-  ]
+  {
+    "name": "Sehnsucht",
+    "image": "https://muenchen.mitvergnuegen.com/resizer/images/7b227769647468223a313238302c22686569676874223a3732307d/wp-content/uploads/sites/3/2016/10/395162_440514162681972_202852054_n.jpg.webp",
+    "type": "bar",
+    "latitude": 48.147452932798025,
+    "longitude": 11.576528566308614
+  },
+  {
+    "name": "The High",
+    "image": "https://www.in-muenchen.de/assets/images/16/101/16101773-1390913650-the-high-bar-muenchen-2uQIjHSga8MH.jpg",
+    "type": "bar",
+    "latitude": 48.13321504425681,
+    "longitude": 11.573056981917444
+  },
+  {
+    "name": "The High",
+    "image": "https://www.in-muenchen.de/assets/images/16/101/16101773-1390913650-the-high-bar-muenchen-2uQIjHSga8MH.jpg",
+    "type": "restaurant",
+    "latitude": 50,
+    "longitude": 10
+  }
+]

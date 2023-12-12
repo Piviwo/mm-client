@@ -14,7 +14,7 @@ function Burger({setNavigation}) {
         <h1 className="headline">easy going</h1>
       </div>
       <div className="menu-items">
-        <li onClick={()=>setNavigation('MAP')}><a className="menu-item">home</a></li>
+        <li onClick={()=>setNavigation('MAP')}><a className="menu-item">map</a></li>
         <li onClick={()=>setNavigation('PLACE')}><a className="menu-item">add a place</a></li>
         <li onClick={()=>setNavigation('MEETING')}><a className="menu-item">start a meeting</a></li>
       </div>
