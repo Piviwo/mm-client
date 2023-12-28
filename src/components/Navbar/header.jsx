@@ -1,11 +1,11 @@
 import React from "react";
 import './header.css'
-import Burger from "./BurgerMenu/burger";
+import MenuItems from "./MenuItems/menu-items";
 
 function Header({setNavigation}) {
   return (
     <div className="nav-bar-container">
-      <Burger setNavigation={setNavigation}></Burger>
+      <MenuItems setNavigation={setNavigation}></MenuItems>
     </div>
   );
 }

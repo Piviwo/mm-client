@@ -1,0 +1,55 @@
+.navbar-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 60px;
+  position: relative;
+}
+
+.headline {
+  font-size: 24px;
+  color: #0e2431;
+  margin:0;
+}
+
+.logo {
+  position: absolute;
+  right: 15px;
+  top: 5px;
+}
+
+.menu-items{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-item{
+  width: 36px;
+  height: 36px;
+  border: none;
+  cursor: pointer;
+  background-color:white;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:first-of-type{
+    background-image: url('../../../assets/map.svg');
+  }
+  &:nth-of-type(2){
+    background-image: url('../../../assets/place.svg');
+  }
+  &:last-of-type{
+    background-image: url('../../../assets/activity.svg');
+  }
+
+  &:active{
+    background-color:white;
+  }
+  &:hover{
+    background-color:white;
+  }
+}
+
+

@@ -3,14 +3,12 @@ import './new-place-form.css';
 
 function PlaceForm() {
   const [formData, setFormData] = useState({ name: '', image: '', type: '', latitude: '', longitude: '' });
-
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value});
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
     const response = await fetch('http://localhost:3000/api/', {
       method: 'POST',
       headers: {
@@ -22,8 +20,8 @@ function PlaceForm() {
   
     if (response.ok) {
       const jsonResponse = await response.json();
-      console.log(jsonResponse);
-      //setFormData({ name: '', image: '', type: '', latitude: '', longitude: '' });
+      console.log('json response', jsonResponse);
+      //setFormData({ name: '', image: '', type: '' });
     } else {
       console.error('Error:', response.status);
     }

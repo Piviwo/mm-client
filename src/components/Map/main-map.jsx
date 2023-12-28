@@ -11,6 +11,8 @@ import Pin from './Pins/pin.jsx';
 import CITIES from '../../data/data.json';
 import './main-map.css'
 
+console.log(CITIES)
+
 function MainMap() {
   const [popupInfo, setPopupInfo] = useState(null);
   const [places, setPlaces] = useState([{}]);
