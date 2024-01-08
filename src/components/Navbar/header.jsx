@@ -4,7 +4,7 @@ import MenuItems from "./MenuItems/menu-items";
 
 function Header({setNavigation}) {
   return (
-    <div className="nav-bar-container">
+    <div className="navbar-container">
       <MenuItems setNavigation={setNavigation}></MenuItems>
     </div>
   );

@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './new-place-form.css';
+import MainMap from '../Map/main-map';
 
-function PlaceForm() {
+function PlaceForm({marker, setMarker}) {
+
   const [formData, setFormData] = useState({ name: '', image: '', type: '', latitude: '', longitude: '' });
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value});
   };
 
+  const hiddenFileInput = useRef(null);
+  const handleClick = event => {
+    hiddenFileInput.current.click();
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:3000/api/', {
+    const response = await fetch('http://localhost:3000/', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -28,6 +35,8 @@ function PlaceForm() {
   };
 
   return (
+    <div className='map-form-container'>
+    <MainMap marker={marker} setMarker={setMarker}></MainMap>
     <div className='form-container'>
       <h2>add a new place</h2>
       <form action="" onSubmit={handleSubmit}>
@@ -38,16 +47,32 @@ function PlaceForm() {
             name="name"
             value={formData.name}
             onChange={handleChange}
+            placeholder={"name"}
+          />
+        </label>
+        <br />
+        <label className="label-upload">
+          upload an image
+          <button 
+            className="button-upload"
+            onClick={handleClick}>
+          </button>
+          <input
+            type="file"
+            name="image"
+            accept="image/*"
+            ref={hiddenFileInput} 
+            value={formData.image}
+            //onChange={handleChange}
+            style={{display:'none'}}
           />
         </label>
         <br />
         <label>
-          image:
+          address:
           <input
             type="text"
-            name="image"
-            value={formData.image}
-            onChange={handleChange}
+            name="address"
           />
         </label>
         <br />
@@ -72,7 +97,7 @@ function PlaceForm() {
           <input
             type="text"
             name="longitude"
-            value={formData.longitude}
+            value={marker.longitude}
             onChange={handleChange}
           />
         </label>
@@ -82,13 +107,14 @@ function PlaceForm() {
           <input
             type="text"
             name="latitude"
-            value={formData.latitude}
+            value={marker.latitude}
             onChange={handleChange}
           />
         </label>
         <br />
-        <button type="submit">Submit</button>
+        <button type="submit">add place to map!</button>
       </form>
+    </div>
     </div>
   );
 };

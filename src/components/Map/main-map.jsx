@@ -6,14 +6,14 @@ import Map, {
   ScaleControl,
   GeolocateControl
 } from 'react-map-gl/maplibre';
-import {useState, useEffect, useMemo} from 'react';
+import {useState, useEffect, useMemo, useCallback} from 'react';
 import Pin from './Pins/pin.jsx';
 import CITIES from '../../data/data.json';
-import './main-map.css'
+import './main-map.css';
+import maplibregl from 'maplibre-gl';
+import 'maplibre-gl/dist/maplibre-gl.css';
 
-console.log(CITIES)
-
-function MainMap() {
+function MainMap({marker, setMarker}) {
   const [popupInfo, setPopupInfo] = useState(null);
   const [places, setPlaces] = useState([{}]);
 
@@ -44,6 +44,13 @@ function MainMap() {
     []
   );
 
+  const onMarkerDragEnd = useCallback(event => {
+    setMarker({
+      longitude: event.lngLat.lng,
+      latitude: event.lngLat.lat,
+    });
+  }, []);
+
   return (
     <Map
       initialViewState={{
@@ -55,6 +62,17 @@ function MainMap() {
       mapStyle="https://api.maptiler.com/maps/outdoor-v2/style.json?key=hInnHZLgrLFW1U6e6Wtv"
     >
       {pins}
+      {
+        <Marker
+          longitude={marker.longitude}
+          latitude={marker.latitude}
+          draggable={true}
+          onDragEnd={onMarkerDragEnd}
+        >
+          <Pin type={"draggable-marker"}/>
+        </Marker>  
+      }
+      
       {popupInfo && (
           <Popup
             anchor="top"

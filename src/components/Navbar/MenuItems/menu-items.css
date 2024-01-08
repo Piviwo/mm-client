@@ -1,10 +1,10 @@
-.navbar-container{
+.menu-items-container{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
-  height: 60px;
-  position: relative;
+  width: 100%;
+  padding: 0 10px 0 10px;
+
 }
 
 .headline {
@@ -13,21 +13,16 @@
   margin:0;
 }
 
-.logo {
-  position: absolute;
-  right: 15px;
-  top: 5px;
-}
-
 .menu-items{
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 }
 
 .menu-item{
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   border: none;
   cursor: pointer;
   background-color:white;
@@ -41,7 +36,7 @@
     background-image: url('../../../assets/place.svg');
   }
   &:last-of-type{
-    background-image: url('../../../assets/activity.svg');
+    background-image: url('../../../assets/friends.svg');
   }
 
   &:active{

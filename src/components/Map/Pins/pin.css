@@ -4,3 +4,7 @@
     fill: black;
     stroke: none;
 }
+
+.draggable-marker{
+    height: 35px !important;
+}

@@ -4,6 +4,7 @@ div.maplibregl-popup{
 
 button.maplibregl-popup-close-button{
     font-size: x-large;
+    color:black
 }
 
 .maplibregl-popup-content > div {
