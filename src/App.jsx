@@ -8,14 +8,12 @@ import Meeting from './components/Meeting/meeting.jsx';
 function App() {
   const [navigation, setNavigation] = useState('MAP');
   const [marker, setMarker] = useState({ longitude: 11.576124, latitude: 48.137154 });
-
-
-
+  
   return (
     <div className='main-container'>
       <Header setNavigation={setNavigation}></Header>
       {navigation === 'MAP' &&
-        <MainMap marker={marker} setMarker={setMarker}></MainMap>
+        <MainMap marker={marker} setMarker={setMarker} navigation={navigation}></MainMap>
       }
       {navigation === 'PLACE' &&
         <PlaceForm marker={marker} setMarker={setMarker}></PlaceForm>

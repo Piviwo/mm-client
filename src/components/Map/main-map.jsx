@@ -13,12 +13,12 @@ import './main-map.css';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
-function MainMap({marker, setMarker}) {
+function MainMap({marker, setMarker, navigation}) {
   const [popupInfo, setPopupInfo] = useState(null);
   const [places, setPlaces] = useState([{}]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api').then(
+    fetch('http://localhost:3000/api/places').then(
       response => response.json()
     ).then(data => {
       setPlaces(data)
@@ -62,16 +62,14 @@ function MainMap({marker, setMarker}) {
       mapStyle="https://api.maptiler.com/maps/outdoor-v2/style.json?key=hInnHZLgrLFW1U6e6Wtv"
     >
       {pins}
-      {
-        <Marker
-          longitude={marker.longitude}
-          latitude={marker.latitude}
-          draggable={true}
-          onDragEnd={onMarkerDragEnd}
-        >
-          <Pin type={"draggable-marker"}/>
-        </Marker>  
-      }
+      <Marker
+        longitude={marker.longitude}
+        latitude={marker.latitude}
+        draggable={true}
+        onDragEnd={onMarkerDragEnd}
+      >
+        <Pin type={"draggable-marker"}/>
+      </Marker>
       
       {popupInfo && (
           <Popup
