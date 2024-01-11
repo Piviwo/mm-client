@@ -1,51 +1,72 @@
-.meeting-container{
-    padding-top: 50px;
+.meeting-container {
+  padding-top: 50px;
 }
 
-.checkbox-container{
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
+.checkbox-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
-.checkbox-item{
-    margin: 3px;
+.checkbox-item {
+  margin: 3px;
 }
 
-label.input-label{
-    cursor: pointer;
-    input[type="checkbox"]{
-        display: none;
-    }
+label.input-label {
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    display: none;
+  }
 }
 
-span.name{
-    font-size: small;
-    color:white;
-    position: relative;
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 30px;
-    transition: 0.5s;
-    user-select: none;
-    overflow: hidden;
-    color:#ffaa00;
-    background-color:white;
-    border: 1px solid #ffaa00;
+span.name {
+  font-size: small;
+  color: white;
+  position: relative;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 30px;
+  transition: 0.5s;
+  user-select: none;
+  overflow: hidden;
+  color: #ffaa00;
+  background-color: white;
+  border: 1px solid #ffaa00;
 
-    &:hover{
-        color:white;
-        background-color: #ffaa00;
-        border: 1px solid #ffaa00;
-    }
-}
-
-label input[type="checkbox"]:checked ~ span{
-    color:white;
+  &:hover {
+    color: white;
     background-color: #ffaa00;
     border: 1px solid #ffaa00;
+  }
 }
 
-/* select{
-    color: grey;
-} */
+label input[type="checkbox"]:checked~span {
+  color: white;
+  background-color: #ffaa00;
+  border: 1px solid #ffaa00;
+}
+
+select {
+  /* reset */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /*new*/
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+}

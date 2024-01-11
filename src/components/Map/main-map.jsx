@@ -62,7 +62,8 @@ function MainMap({marker, setMarker, navigation}) {
       mapStyle="https://api.maptiler.com/maps/outdoor-v2/style.json?key=hInnHZLgrLFW1U6e6Wtv"
     >
       {pins}
-      <Marker
+      {navigation!='MAP' && (
+        <Marker
         longitude={marker.longitude}
         latitude={marker.latitude}
         draggable={true}
@@ -70,7 +71,7 @@ function MainMap({marker, setMarker, navigation}) {
       >
         <Pin type={"draggable-marker"}/>
       </Marker>
-      
+      )}
       {popupInfo && (
           <Popup
             anchor="top"

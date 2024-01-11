@@ -1,32 +1,31 @@
-div.maplibregl-popup{
-    max-width: 300px;
+div.maplibregl-popup {
+  max-width: 300px;
 }
 
-button.maplibregl-popup-close-button{
-    font-size: x-large;
-    color:black
+button.maplibregl-popup-close-button {
+  font-size: x-large;
+  color: black
 }
 
-.maplibregl-popup-content > div {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.maplibregl-popup-content>div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.popup-info-textbox{
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
+.popup-info-textbox {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
 }
 
-.popup-info-text{
-    display: flex;
-    margin: 0;
-    font-size: small;
-    font-family: "Poppins", sans-serif;
+.popup-info-text {
+  display: flex;
+  margin: 0;
+  font-size: small;
+  font-family: "Poppins", sans-serif;
 
-    &:nth-child(1){
-        font-size: medium;
-    }
+  &:nth-child(1) {
+    font-size: medium;
+  }
 }
-

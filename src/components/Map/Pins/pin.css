@@ -1,10 +1,10 @@
-.pin{
-    height: 20px;
-    cursor: pointer;
-    fill: black;
-    stroke: none;
+.pin {
+  height: 20px;
+  cursor: pointer;
+  fill: black;
+  stroke: none;
 }
 
-.draggable-marker{
-    height: 35px !important;
+.draggable-marker {
+  height: 35px !important;
 }
