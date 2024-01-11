@@ -85,9 +85,12 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    border:1px solid #ffaa00
   }
   
   button:hover {
-    background-color: rgb(235, 206, 58);
+    border:1px solid #ffaa00;
+    color: #ffaa00;
+    background-color: white;
   }
   

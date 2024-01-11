@@ -1,6 +1,51 @@
 .meeting-container{
     padding-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
+
+.checkbox-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.checkbox-item{
+    margin: 3px;
+}
+
+label.input-label{
+    cursor: pointer;
+    input[type="checkbox"]{
+        display: none;
+    }
+}
+
+span.name{
+    font-size: small;
+    color:white;
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 30px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+    color:#ffaa00;
+    background-color:white;
+    border: 1px solid #ffaa00;
+
+    &:hover{
+        color:white;
+        background-color: #ffaa00;
+        border: 1px solid #ffaa00;
+    }
+}
+
+label input[type="checkbox"]:checked ~ span{
+    color:white;
+    background-color: #ffaa00;
+    border: 1px solid #ffaa00;
+}
+
+/* select{
+    color: grey;
+} */

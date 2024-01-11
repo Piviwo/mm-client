@@ -3,7 +3,7 @@ import './new-place-form.css';
 import MainMap from '../Map/main-map';
 
 function PlaceForm({marker, setMarker}) {
-  const initialState = { name: '', image: '', type: '', latitude: marker.latitude, longitude: marker.longitude }
+  const initialState = { name: '', image: '', type: ''}
   const [formData, setFormData] = useState(initialState);
 
   const handleChange = (e) => {
@@ -29,7 +29,7 @@ function PlaceForm({marker, setMarker}) {
     if (response.ok) {
       const jsonResponse = await response.json();
       console.log('json response', jsonResponse);
-      setFormData({...formData, name: '', image: '', type: '', latitude: marker.latitude, longitude: marker.longitude});
+      setFormData({...formData, name: '', image: '', type: ''});
 
     } else {
       console.error('Error:', response.status);

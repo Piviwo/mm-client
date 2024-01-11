@@ -28,6 +28,7 @@
   background-color:white;
   background-repeat: no-repeat;
   background-size: cover;
+  border:none !important;
 
   &:first-of-type{
     background-image: url('../../../assets/map.svg');
