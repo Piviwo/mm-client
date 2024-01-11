@@ -10,7 +10,7 @@ function Meeting() {
     setSelectedActivity(e.target.value)
   };
 
-  const data = PEOPLE.map(item => item.name)
+  const data = PEOPLE.map(item => item.name).sort();
   const handleCheckboxChange = (person) => {
     if (selectedPeople.includes(person)) {
       setSelectedPeople(selectedPeople => { return selectedPeople.filter(p => p !== person) })

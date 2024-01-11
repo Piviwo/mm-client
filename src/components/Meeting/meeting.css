@@ -47,6 +47,11 @@ label input[type="checkbox"]:checked~span {
   border: 1px solid #ffaa00;
 }
 
+select:invalid,
+select option[value=""] {
+  color:#737272;
+}
+
 select {
   /* reset */
   -webkit-box-sizing: border-box;

@@ -53,6 +53,11 @@
     width:100%;
   }
 
+  select:invalid,
+  select option[value=""] {
+    color: #737272;
+  }
+
   .label-upload{
     display: flex;
     align-items: center;
