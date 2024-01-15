@@ -5,7 +5,7 @@ import restaurant from '../../../assets/restaurant.svg';
 import theatre from '../../../assets/theatre.svg';
 import cafe from '../../../assets/cafe.svg';
 import drag from '../../../assets/draggable-place.svg';
-import './pin.css';cd
+import './pin.css';
 
 
 function Pin({type}) {
