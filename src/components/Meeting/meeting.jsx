@@ -20,6 +20,7 @@ function Meeting({setNavigation}) {
   }
 
   const suggestActivity = () => {
+    setNavigation('SUCCESS');
     event.preventDefault();
     console.log("Submitted")
   }
@@ -63,11 +64,8 @@ function Meeting({setNavigation}) {
           <option value="cinema">cinema</option>
           <option value="theatre">theatre</option>
         </select>
-        <button type="submit" className='button-submit suggestion' onClick={()=>setNavigation('SUCCESS')}>suggest activity!</button>
+        <button type="submit" className='button-submit suggestion' onClick={suggestActivity}>suggest activity!</button>
       </form>
-      <div className='activity-suggestion'>
-        
-      </div>
     </div>
   );
 }

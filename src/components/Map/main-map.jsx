@@ -1,12 +1,5 @@
-import Map, {
-  Marker,
-  Popup,
-  NavigationControl,
-  FullscreenControl,
-  ScaleControl,
-  GeolocateControl
-} from 'react-map-gl/maplibre';
-import {useState, useEffect, useMemo, useCallback} from 'react';
+import {Map, Marker,Popup} from 'react-map-gl/maplibre';
+import {useState, useMemo, useCallback} from 'react';
 import Pin from './Pins/pin.jsx';
 import './main-map.css';
 import stockImage from '../../assets/image-placeholder.jpeg';
@@ -50,16 +43,16 @@ function MainMap({marker, setMarker, navigation, places}) {
       style={{width: '100vw', height: '100vh'}}
       mapStyle="https://api.maptiler.com/maps/streets-v2/style.json?key=hInnHZLgrLFW1U6e6Wtv"
     >
-      {pins}
+      {navigation!='PLACE' && pins}
       {navigation!='MAP' && (
         <Marker
-        longitude={marker.longitude}
-        latitude={marker.latitude}
-        draggable={true}
-        onDragEnd={onMarkerDragEnd}
-      >
-        <Pin type={"draggable-marker"}/>
-      </Marker>
+          longitude={marker.longitude}
+          latitude={marker.latitude}
+          draggable={true}
+          onDragEnd={onMarkerDragEnd}
+        >
+          <Pin type={"draggable-marker"}/>
+        </Marker>
       )}
       {popupInfo && (
           <Popup

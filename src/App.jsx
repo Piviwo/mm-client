@@ -8,7 +8,7 @@ import './App.css';
 
 function App() {
   const [navigation, setNavigation] = useState('MAP');
-  const [marker, setMarker] = useState({ longitude: 11.576124, latitude: 48.137154 });
+  const [marker, setMarker] = useState({ longitude: 11.576040415348473, latitude: 48.145493694955945 });
   const [places, setPlaces] = useState([]);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ function App() {
         <MainMap marker={marker} setMarker={setMarker} navigation={navigation} places={places}></MainMap>
       }
       {navigation === 'PLACE' && places &&
-        <PlaceForm marker={marker} setMarker={setMarker} places={places}></PlaceForm>
+        <PlaceForm marker={marker} setMarker={setMarker} navigation={navigation} places={places}></PlaceForm>
       }
       {navigation === 'MEETING' &&
         <Meeting setNavigation={setNavigation}></Meeting>
