@@ -1,9 +1,10 @@
-import './App.css';
+import { useState, useEffect } from 'react';
 import MainMap from './components/Map/main-map.jsx';
 import PlaceForm from './components/AddAPlace/new-place-form.jsx';
 import Header from './components/Navbar/header.jsx';
-import { useState, useEffect } from 'react';
 import Meeting from './components/Meeting/meeting.jsx';
+import ResultPage from './components/ResultPage/result-page.jsx';
+import './App.css';
 
 function App() {
   const [navigation, setNavigation] = useState('MAP');
@@ -19,7 +20,10 @@ function App() {
         <PlaceForm marker={marker} setMarker={setMarker}></PlaceForm>
       }
       {navigation === 'MEETING' &&
-        <Meeting></Meeting>
+        <Meeting setNavigation={setNavigation}></Meeting>
+      }
+      {navigation === 'SUCCESS' &&
+        <ResultPage setNavigation={setNavigation}></ResultPage>
       }
     </div>
     

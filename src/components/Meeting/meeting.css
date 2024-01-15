@@ -1,5 +1,6 @@
 .meeting-container {
-  padding-top: 50px;
+  margin-top: 50px;
+  width: 80%;
 }
 
 .checkbox-container {
@@ -75,4 +76,8 @@ select {
     5px 5px,
     1px 1.5em;
   background-repeat: no-repeat;
+}
+
+button.suggestion{
+  background: linear-gradient(0.25turn, #F8E074, #D66159);
 }

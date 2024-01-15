@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import './meeting.css';
 import PEOPLE from '../../data/people.json';
 
-function Meeting() {
+function Meeting({setNavigation}) {
   const [selectedActivity, setSelectedActivity] = useState('');
   const [selectedPeople, setSelectedPeople] = useState([])
 
@@ -63,9 +63,11 @@ function Meeting() {
           <option value="cinema">cinema</option>
           <option value="theatre">theatre</option>
         </select>
-        <button type="submit">suggest activity!</button>
+        <button type="submit" className='button-submit suggestion' onClick={()=>setNavigation('SUCCESS')}>suggest activity!</button>
       </form>
-      <div className='activity-suggestion'></div>
+      <div className='activity-suggestion'>
+        
+      </div>
     </div>
   );
 }

@@ -66,6 +66,11 @@ function PlaceForm({marker, setMarker}) {
           <option value="cinema">cinema</option>
           <option value="museum">museum</option>
           <option value="restaurant">restaurant</option>
+          <option value="cafe">café</option>
+          <option value="theatre">theatre</option>
+          <option value="park">park</option>
+          <option value="library">library</option>
+          <option value="swimming">swimming pool</option>
         </select>
 
           <input
@@ -83,7 +88,7 @@ function PlaceForm({marker, setMarker}) {
             style={{display:'none'}}
           />
         
-        <button type="submit">add place to map!</button>
+        <button type="submit" className='button-submit place'>add place to map!</button>
       </form>
     </div>
     </div>
