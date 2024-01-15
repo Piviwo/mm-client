@@ -23,7 +23,6 @@ button.maplibregl-popup-close-button {
   display: flex;
   margin: 0;
   font-size: small;
-  font-family: "Poppins", sans-serif;
 
   &:nth-child(1) {
     font-size: medium;

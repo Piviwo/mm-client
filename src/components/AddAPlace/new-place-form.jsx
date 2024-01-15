@@ -40,7 +40,7 @@ function PlaceForm({marker, setMarker}) {
     <div className='map-form-container'>
     <MainMap marker={marker} setMarker={setMarker}></MainMap>
     <div className='form-container'>
-      <h2>add a new place</h2>
+      <h2>let's add a new place!</h2>
       <form action="" onSubmit={handleSubmit}>
         <input type="text" id="name" name="name" required  value={formData.name} onChange={handleChange} placeholder="name"/>
         {/* <label className="label-upload">

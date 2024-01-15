@@ -43,9 +43,9 @@ function Meeting({setNavigation}) {
 
   return (
     <div className="meeting-container">
-      <h2></h2>
+      <h2>let's start an activity!</h2>
       <form type='submit' onSubmit={suggestActivity}>
-        <label>select people you would like to meet up with</label>
+        <label>Who should be invited?</label>
         <div className="checkbox-container">
           {people}
         </div>
