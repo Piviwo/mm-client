@@ -8,26 +8,15 @@ import Map, {
 } from 'react-map-gl/maplibre';
 import {useState, useEffect, useMemo, useCallback} from 'react';
 import Pin from './Pins/pin.jsx';
-import CITIES from '../../data/data.json';
 import './main-map.css';
-import maplibregl from 'maplibre-gl';
-import 'maplibre-gl/dist/maplibre-gl.css';
+import stockImage from '../../assets/image-placeholder.jpeg';
 
-function MainMap({marker, setMarker, navigation}) {
+function MainMap({marker, setMarker, navigation, places}) {
   const [popupInfo, setPopupInfo] = useState(null);
-  const [places, setPlaces] = useState([{}]);
-
-  useEffect(() => {
-    fetch('http://localhost:3000/api/places').then(
-      response => response.json()
-    ).then(data => {
-      setPlaces(data)
-    })
-  }, [])
 
   const pins = useMemo(
     () =>
-      CITIES.map((place, index) => (
+      places.map((place, index) => (
         <Marker
           key={`marker-${index}`}
           longitude={place.longitude}
@@ -59,7 +48,7 @@ function MainMap({marker, setMarker, navigation}) {
         zoom: 12
       }}
       style={{width: '100vw', height: '100vh'}}
-      mapStyle="https://api.maptiler.com/maps/outdoor-v2/style.json?key=hInnHZLgrLFW1U6e6Wtv"
+      mapStyle="https://api.maptiler.com/maps/streets-v2/style.json?key=hInnHZLgrLFW1U6e6Wtv"
     >
       {pins}
       {navigation!='MAP' && (
@@ -84,7 +73,7 @@ function MainMap({marker, setMarker, navigation}) {
               <p className="popup-info-text">{popupInfo.name}</p>
               <p className="popup-info-text">{popupInfo.type}</p>
             </div>
-            <img width="100%" src={popupInfo.image} />
+            <img width="100%" src={stockImage} />
           </Popup>
         )}
     </Map>

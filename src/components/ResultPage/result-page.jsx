@@ -2,7 +2,10 @@ import { useState } from "react";
 import './result-page.css';
 import theatre from '../../assets/volkstheater.jpeg'
 
-function ResultPage({setNavigation}) {
+function ResultPage({setNavigation, places}) {
+
+  const place = places[Math.floor(Math.random()*places.length)];
+  console.log(place)
 
   return(
     <div className="result-container">

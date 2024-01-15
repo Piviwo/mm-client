@@ -1,8 +1,17 @@
 .pin {
-  height: 20px;
+  height: 15px;
   cursor: pointer;
   fill: black;
   stroke: none;
+  background-color: white;
+  border-radius: 10%;
+  border: 1px solid;
+  padding: 1px;
+}
+
+.pin:has(.draggable-marker){
+  background-color: transparent;
+  border: 0px;
 }
 
 .draggable-marker {

@@ -1,5 +1,6 @@
 div.maplibregl-popup {
   max-width: 300px;
+  width:200px
 }
 
 button.maplibregl-popup-close-button {

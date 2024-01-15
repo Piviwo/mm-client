@@ -4,7 +4,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-family: "Roboto", sans-serif;
+	font-family: "Roboto", sans-serif !important;
+    color: #1d1d1d;
 }
 
 .button-submit{
