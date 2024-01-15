@@ -1,11 +1,11 @@
 import bar from '../../../assets/bar.svg';
-import cinema from '../../../assets/bar.svg';
+import cinema from '../../../assets/cinema.svg';
 import museum from '../../../assets/museum.svg';
 import restaurant from '../../../assets/restaurant.svg';
 import theatre from '../../../assets/theatre.svg';
 import cafe from '../../../assets/cafe.svg';
 import drag from '../../../assets/draggable-place.svg';
-import './pin.css';
+import './pin.css';cd
 
 
 function Pin({type}) {
