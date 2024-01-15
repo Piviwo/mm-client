@@ -1,15 +1,16 @@
 import { useState } from "react";
 import './result-page.css';
+import theatre from '../../assets/volkstheater.jpeg'
 
 function ResultPage({setNavigation}) {
 
   return(
     <div className="result-container">
       <div className="text-contaier">
-      <p>name</p>
-      <p>address</p>
+      <p className="location-name">Münchner Volkstheater</p>
+      <p className="location-address">Tumblingerstraße 29, 80337 München</p>
       </div>
-      <img></img>
+      <img className='location-image' src={theatre}></img>
       <div className="text-container">
         <p>share this location with</p>
       </div>
