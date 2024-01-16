@@ -4,6 +4,7 @@ import PlaceForm from './components/AddAPlace/new-place-form.jsx';
 import Header from './components/Navbar/header.jsx';
 import Meeting from './components/Meeting/meeting.jsx';
 import ResultPage from './components/ResultPage/result-page.jsx';
+import Impressum from './components/Impressum/impressum.jsx';
 import './App.css';
 
 function App() {
@@ -35,13 +36,16 @@ function App() {
         <MainMap marker={marker} setMarker={setMarker} navigation={navigation} places={places}></MainMap>
       }
       {navigation === 'PLACE' && places &&
-        <PlaceForm marker={marker} setMarker={setMarker} navigation={navigation} places={places}></PlaceForm>
+        <PlaceForm marker={marker} setMarker={setMarker} navigation={navigation} setNavigation={setNavigation} places={places}></PlaceForm>
       }
       {navigation === 'MEETING' &&
         <Meeting setNavigation={setNavigation}></Meeting>
       }
       {navigation === 'SUCCESS' &&
         <ResultPage setNavigation={setNavigation} places={places}></ResultPage>
+      }
+      {navigation === 'IMPRESSUM' &&
+        <Impressum></Impressum>
       }
     </div>
     

@@ -24,11 +24,11 @@
   border: 0.5px solid black;
 }
 
-button.back{
+button.share{
   background: linear-gradient(0.25turn, #7CC1A0, #F8E074);
 }
 
-.back:hover{
+.share:hover{
   border:1px solid #7CC1A0;
   color: #7CC1A0;
   background: white;

@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import './new-place-form.css';
 import MainMap from '../Map/main-map';
 
-function PlaceForm({marker, setMarker, places, navigation}) {
+function PlaceForm({marker, setMarker, places, navigation, setNavigation}) {
   const initialState = { name: '', image: '', type: ''}
   const [formData, setFormData] = useState(initialState);
 
@@ -42,6 +42,7 @@ function PlaceForm({marker, setMarker, places, navigation}) {
     <div className='form-container'>
       <h2>let's add a new place!</h2>
       <form action="" onSubmit={handleSubmit}>
+        <button className='back-button' onClick= {() => {setNavigation('MAP')}}>x</button>
         <input type="text" id="name" name="name" required  value={formData.name} onChange={handleChange} placeholder="name"/>
         <input type="text" id="address" name="address" placeholder="address"/>
         <select type="text" id="type" name="type" required value={formData.type} onChange={handleChange}>

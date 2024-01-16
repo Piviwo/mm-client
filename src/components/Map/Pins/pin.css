@@ -9,11 +9,13 @@
   padding: 1px;
 }
 
-.pin:has(.draggable-marker){
+.pin:has(.draggable-marker-blue),
+.pin:has(.draggable-marker-green){
   background-color: transparent;
   border: 0px;
 }
 
-.draggable-marker {
+.draggable-marker-blue,
+.draggable-marker-green{
   height: 35px !important;
 }

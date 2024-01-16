@@ -4,7 +4,8 @@ import museum from '../../../assets/museum.svg';
 import restaurant from '../../../assets/restaurant.svg';
 import theatre from '../../../assets/theatre.svg';
 import cafe from '../../../assets/cafe.svg';
-import drag from '../../../assets/draggable-place.svg';
+import dragBlue from '../../../assets/draggable-place-blue.svg';
+import dragGreen from '../../../assets/draggable-place-green.svg';
 import './pin.css';
 
 
@@ -22,9 +23,11 @@ function Pin({type}) {
       source = theatre;
   } else if (type == 'cafe'){
     source = cafe;
-  }else if(type == 'draggable-marker'){
-      source = drag;
-  }
+  }else if(type == 'draggable-marker-blue'){
+      source = dragBlue;
+  }else if(type == 'draggable-marker-green'){
+    source = dragGreen;
+}
 
   return (
     <div className={"pin"}>

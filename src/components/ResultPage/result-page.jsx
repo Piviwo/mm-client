@@ -22,7 +22,7 @@ function ResultPage({setNavigation, places}) {
           longitude={11.576124}
           latitude={48.137154}
         >
-          <Pin type={"draggable-marker"}/>
+          <Pin type={"draggable-marker-green"}/>
         </Marker>
       </Map>
       <div className="result-container">
@@ -32,9 +32,9 @@ function ResultPage({setNavigation, places}) {
         </div>
         <img className='location-image' src={theatre}></img>
         <div className="text-container">
-          <p>share this location with</p>
+          <p></p>
         </div>
-        <button className='button-submit back' onClick={()=>setNavigation('MEETING')}>take me back!</button>
+        <button className='button-submit share' onClick={()=>setNavigation('MEETING')}>share!</button>
       </div>
     </div>
   )

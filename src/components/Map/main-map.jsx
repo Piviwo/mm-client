@@ -2,7 +2,7 @@ import {Map, Marker,Popup} from 'react-map-gl/maplibre';
 import {useState, useMemo, useCallback} from 'react';
 import Pin from './Pins/pin.jsx';
 import './main-map.css';
-import stockImage from '../../assets/image-placeholder.jpeg';
+import stockImage from '../../assets/stock-image.jpeg';
 
 function MainMap({marker, setMarker, navigation, places}) {
   const [popupInfo, setPopupInfo] = useState(null);
@@ -51,7 +51,7 @@ function MainMap({marker, setMarker, navigation, places}) {
           draggable={true}
           onDragEnd={onMarkerDragEnd}
         >
-          <Pin type={"draggable-marker"}/>
+          <Pin type={"draggable-marker-blue"}/>
         </Marker>
       )}
       {popupInfo && (

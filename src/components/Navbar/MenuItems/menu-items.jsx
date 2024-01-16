@@ -15,11 +15,11 @@ function MenuItems({setNavigation}) {
       </div>
       <div className='button-container'>
         <button onClick={()=>setNavigation('MEETING')} className="menu-item activity-button"></button>
-        <p className='button-text'>start activity</p>
+        <p className='button-text'>plan activity</p>
       </div>
     </div>
     <div className="logo">
-      <h1 className="headline">easy going</h1>
+      <h1 className="headline" onClick={()=>setNavigation('IMPRESSUM')}>easy going</h1>
     </div>
     </div>
   )

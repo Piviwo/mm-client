@@ -44,13 +44,10 @@ function Meeting({setNavigation}) {
 
   return (
     <div className="meeting-container">
-      <h2>let's start an activity!</h2>
+      <button className='back-button' onClick= {() => {setNavigation('MAP')}}>x</button>
+      <h2>let's plan an activity!</h2>
       <form type='submit' onSubmit={suggestActivity}>
-        <label>Who should be invited?</label>
-        <div className="checkbox-container">
-          {people}
-        </div>
-        <select
+      <select
           type="text"
           name="activity"
           value={selectedActivity}
@@ -64,7 +61,11 @@ function Meeting({setNavigation}) {
           <option value="cinema">cinema</option>
           <option value="theatre">theatre</option>
         </select>
-        <button type="submit" className='button-submit suggestion' onClick={suggestActivity}>suggest activity!</button>
+        <label>Who should be invited?</label>
+        <div className="checkbox-container">
+          {people}
+        </div>
+        <button type="submit" className='button-submit suggestion' onClick={suggestActivity}>get suggestion!</button>
       </form>
     </div>
   );

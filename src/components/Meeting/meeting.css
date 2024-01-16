@@ -88,3 +88,8 @@ button.suggestion{
     color: #ffaa00;
     background: white;
 }
+
+.back-button{
+  right: 8px;
+  top: 53px;
+}
