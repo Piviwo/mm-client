@@ -34,7 +34,7 @@ function ResultPage({setNavigation, places}) {
         <div className="text-container">
           <p>share this location with</p>
         </div>
-        <button className='button-submit back' onClick={()=>setNavigation('MEETING')}>take me back</button>
+        <button className='button-submit back' onClick={()=>setNavigation('MEETING')}>take me back!</button>
       </div>
     </div>
   )

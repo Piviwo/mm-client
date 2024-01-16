@@ -43,22 +43,6 @@ function PlaceForm({marker, setMarker, places, navigation}) {
       <h2>let's add a new place!</h2>
       <form action="" onSubmit={handleSubmit}>
         <input type="text" id="name" name="name" required  value={formData.name} onChange={handleChange} placeholder="name"/>
-        {/* <label className="label-upload">
-          upload an image
-          <button 
-            type="button"
-            className="button-upload"
-            onClick={handleClick}>
-          </button>
-          <input
-            type="file"
-            name="image"
-            accept="image/*"
-            ref={hiddenFileInput} 
-            value={formData.image}
-            style={{display:'none'}}
-          />
-        </label> */}
         <input type="text" id="address" name="address" placeholder="address"/>
         <select type="text" id="type" name="type" required value={formData.type} onChange={handleChange}>
           <option value="" disabled>select a location type</option>
@@ -87,6 +71,23 @@ function PlaceForm({marker, setMarker, places, navigation}) {
             onChange={handleChange}
             style={{display:'none'}}
           />
+
+          {/* {<label className="label-upload">
+            upload an image
+            <button 
+              type="button"
+              className="button-upload"
+              onClick={handleClick}>
+            </button>
+            <input
+              type="file"
+              name="image"
+              accept="image/*"
+              ref={hiddenFileInput} 
+              value={formData.image}
+              style={{display:'none'}}
+            />
+          </label>} */}
         
         <button type="submit" className='button-submit place'>add place to map!</button>
       </form>

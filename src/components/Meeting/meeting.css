@@ -82,3 +82,9 @@ select {
 button.suggestion{
   background: linear-gradient(0.25turn, #F8E074, #D66159);
 }
+
+.suggestion:hover{
+	border:1px solid #ffaa00;
+    color: #ffaa00;
+    background: white;
+}

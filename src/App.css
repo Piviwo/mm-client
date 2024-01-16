@@ -20,7 +20,5 @@
 }
 
 .button-submit:hover{
-	border:1px solid #ffaa00;
-    color: #ffaa00;
     background: white;
 }
