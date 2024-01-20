@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import './meeting.css';
 import PEOPLE from '../../data/people.json';
+import backButton from '../../assets/close-button.svg'
 
 function Meeting({setNavigation}) {
   const [selectedActivity, setSelectedActivity] = useState('');
@@ -44,7 +45,9 @@ function Meeting({setNavigation}) {
 
   return (
     <div className="meeting-container">
-      <button className='back-button' onClick= {() => {setNavigation('MAP')}}>x</button>
+      <button className='back-button' onClick= {() => {setNavigation('MAP')}}>
+        <img src={backButton} alt="Close"></img>
+      </button>
       <h2>let's plan an activity!</h2>
       <form type='submit' onSubmit={suggestActivity}>
       <select

@@ -54,12 +54,12 @@
 }
 
 .map-button{
-  background-image: url('../../../assets/map.svg');
+  background-image: url('../../../assets/menu/map.svg');
 }
 .place-button{
-  background-image: url('../../../assets/place.svg');
+  background-image: url('../../../assets/menu/place.svg');
 }
 .activity-button{
-  background-image: url('../../../assets/friends.svg');
+  background-image: url('../../../assets/menu/friends.svg');
 }
 

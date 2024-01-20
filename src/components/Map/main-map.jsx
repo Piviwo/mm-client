@@ -20,7 +20,7 @@ function MainMap({marker, setMarker, navigation, places}) {
             setPopupInfo(place);
           }}
         >
-          <Pin type={place.type}/>
+          <Pin type={place.type} className={'place'}/>
         </Marker>
       )),
     []
@@ -51,7 +51,7 @@ function MainMap({marker, setMarker, navigation, places}) {
           draggable={true}
           onDragEnd={onMarkerDragEnd}
         >
-          <Pin type={"draggable-marker-blue"}/>
+          <Pin type={"draggable-marker-blue"} className={'marker'}/>
         </Marker>
       )}
       {popupInfo && (
@@ -65,6 +65,7 @@ function MainMap({marker, setMarker, navigation, places}) {
             <div className="popup-info-textbox">
               <p className="popup-info-text">{popupInfo.name}</p>
               <p className="popup-info-text">{popupInfo.type}</p>
+              <p className="popup-info-text-small">{'Barer Str. 29, 80799 München'}</p>
             </div>
             <img width="100%" src={stockImage} />
           </Popup>

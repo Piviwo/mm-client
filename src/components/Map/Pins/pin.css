@@ -1,21 +1,10 @@
-.pin {
-  height: 15px;
+.place {
   cursor: pointer;
   fill: black;
   stroke: none;
-  background-color: white;
-  border-radius: 10%;
-  border: 1px solid;
   padding: 1px;
 }
 
-.pin:has(.draggable-marker-blue),
-.pin:has(.draggable-marker-green){
-  background-color: transparent;
-  border: 0px;
-}
-
-.draggable-marker-blue,
-.draggable-marker-green{
+.marker{
   height: 35px !important;
 }

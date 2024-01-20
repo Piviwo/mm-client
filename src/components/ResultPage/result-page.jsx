@@ -3,6 +3,7 @@ import {Map, Marker} from 'react-map-gl/maplibre';
 import './result-page.css';
 import theatre from '../../assets/volkstheater.jpeg';
 import Pin from '../../components/Map/Pins/pin.jsx';
+import { shareOnMobile } from 'react-mobile-share';
 
 function ResultPage({setNavigation, places}) {
   const place = places[Math.floor(Math.random()*places.length)];
@@ -22,7 +23,19 @@ function ResultPage({setNavigation, places}) {
           longitude={11.576124}
           latitude={48.137154}
         >
-          <Pin type={"draggable-marker-green"}/>
+          <Pin type={"draggable-marker-green"} className={'marker'}/>
+        </Marker>
+        <Marker
+          longitude={11.576124}
+          latitude={48.145}
+        >
+          <Pin type={"pin-athina"} className={'marker'}/>
+        </Marker>
+        <Marker
+          longitude={11.6}
+          latitude={48.139}
+        >
+          <Pin type={"pin-pia"} className={'marker'}/>
         </Marker>
       </Map>
       <div className="result-container">
@@ -34,7 +47,13 @@ function ResultPage({setNavigation, places}) {
         <div className="text-container">
           <p></p>
         </div>
-        <button className='button-submit share' onClick={()=>setNavigation('MEETING')}>share!</button>
+        <button 
+          className='button-submit share'  
+          onClick={()=>shareOnMobile({
+            text: "Let's meet here",
+            url: "https://www.muenchner-volkstheater.de",
+            title: "React-Mobile-Share",
+          })}>share!</button>
       </div>
     </div>
   )

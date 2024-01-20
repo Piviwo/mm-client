@@ -17,7 +17,6 @@ button.maplibregl-popup-close-button {
 .popup-info-textbox {
   display: flex;
   flex-direction: column;
-  gap: 1px;
 }
 
 .popup-info-text {
@@ -27,5 +26,11 @@ button.maplibregl-popup-close-button {
 
   &:nth-child(1) {
     font-size: medium;
+    font-weight:bold;
   }
+}
+
+.popup-info-text-small {
+  margin: 0;
+  font-size: 11px;
 }

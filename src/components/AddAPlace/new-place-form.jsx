@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './new-place-form.css';
 import MainMap from '../Map/main-map';
+import backButton from '../../assets/close-button.svg'
 
 function PlaceForm({marker, setMarker, places, navigation, setNavigation}) {
   const initialState = { name: '', image: '', type: ''}
@@ -42,7 +43,9 @@ function PlaceForm({marker, setMarker, places, navigation, setNavigation}) {
     <div className='form-container'>
       <h2>let's add a new place!</h2>
       <form action="" onSubmit={handleSubmit}>
-        <button className='back-button' onClick= {() => {setNavigation('MAP')}}>x</button>
+        <button className='back-button' onClick= {() => {setNavigation('MAP')}}>
+        <img src={backButton} alt="Close"></img>
+        </button>
         <input type="text" id="name" name="name" required  value={formData.name} onChange={handleChange} placeholder="name"/>
         <input type="text" id="address" name="address" placeholder="address"/>
         <select type="text" id="type" name="type" required value={formData.type} onChange={handleChange}>
