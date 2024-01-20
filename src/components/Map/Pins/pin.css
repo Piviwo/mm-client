@@ -5,6 +5,12 @@
   padding: 1px;
 }
 
+.place:hover,
+.place:active{
+  background-color: transparent;
+  border:0;
+}
+
 .marker{
   height: 35px !important;
 }

@@ -4,28 +4,61 @@
 
 .result-container{
   width: 100vw;
+  height: 200vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .text-container{
   display: flex;
   flex-direction: column;
-  align-items: left;
+  padding-left: 15px;
+}
+
+.back{
+  top:265px;
 }
 
 .location-name{
   font-size: x-large;
+  margin-bottom: 0;
 }
 
 .location-image{
-  width: 75%;
-  border: 0.5px solid black;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.text-div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.location-website,
+.location-address{
+  font-size: small;
+  color: #1d1e1e;
+}
+
+.icon{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
 }
 
 button.share{
   background: linear-gradient(0.25turn, #7CC1A0, #F8E074);
+  width: 150px;
+  margin-left:18px;
+}
+.share:after{
+  content: '';
+  width: 15px;
+  height:15px;
+  display: inline-flex;
+  background-repeat: no-repeat;
+  background-image: url('../../assets/result-page/www.svg');
 }
 
 .share:hover{

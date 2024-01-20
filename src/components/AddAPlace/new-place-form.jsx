@@ -16,6 +16,10 @@ function PlaceForm({marker, setMarker, places, navigation, setNavigation}) {
     hiddenFileInput.current.click();
   };
 
+  const isFormValid = () => {
+    return formData.name.trim() !== '' && formData.type.trim() !== '';
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await fetch('http://localhost:3000/api/place', {
@@ -31,7 +35,7 @@ function PlaceForm({marker, setMarker, places, navigation, setNavigation}) {
       const jsonResponse = await response.json();
       console.log('json response', jsonResponse);
       setFormData({...formData, name: '', image: '', type: ''});
-
+      setNavigation('MAP')
     } else {
       console.error('Error:', response.status);
     }
@@ -93,7 +97,7 @@ function PlaceForm({marker, setMarker, places, navigation, setNavigation}) {
             />
           </label>} */}
         
-        <button type="submit" className='button-submit place'>add place to map!</button>
+        <button type="submit" className='button-submit place' disabled={!isFormValid()}>add place to map!</button>
       </form>
     </div>
     </div>

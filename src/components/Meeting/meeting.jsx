@@ -11,6 +11,15 @@ function Meeting({setNavigation}) {
     setSelectedActivity(e.target.value)
   };
 
+  const suggestActivity = () => {
+    setNavigation('SUCCESS');
+    event.preventDefault();
+  }
+
+  const isFormValid = () => {
+    return selectedActivity !== '' && selectedPeople.length !== 0;
+  };
+
   const data = PEOPLE.map(item => item.name).sort();
   const handleCheckboxChange = (person) => {
     if (selectedPeople.includes(person)) {
@@ -18,12 +27,6 @@ function Meeting({setNavigation}) {
     } else {
       setSelectedPeople([...selectedPeople, person])
     }
-  }
-
-  const suggestActivity = () => {
-    setNavigation('SUCCESS');
-    event.preventDefault();
-    console.log("Submitted")
   }
 
   const people = useMemo(
@@ -49,7 +52,7 @@ function Meeting({setNavigation}) {
         <img src={backButton} alt="Close"></img>
       </button>
       <h2>let's plan an activity!</h2>
-      <form type='submit' onSubmit={suggestActivity}>
+      <form action='' onSubmit={suggestActivity}>
       <select
           type="text"
           name="activity"
@@ -68,7 +71,7 @@ function Meeting({setNavigation}) {
         <div className="checkbox-container">
           {people}
         </div>
-        <button type="submit" className='button-submit suggestion' onClick={suggestActivity}>get suggestion!</button>
+        <button type="submit" className='button-submit suggestion' onClick={suggestActivity} disabled={!isFormValid()}>get suggestion!</button>
       </form>
     </div>
   );

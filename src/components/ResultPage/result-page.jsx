@@ -1,9 +1,12 @@
-import { useState } from "react";
 import {Map, Marker} from 'react-map-gl/maplibre';
-import './result-page.css';
 import theatre from '../../assets/volkstheater.jpeg';
 import Pin from '../../components/Map/Pins/pin.jsx';
 import { shareOnMobile } from 'react-mobile-share';
+import backButton from '../../assets/result-page/back-button.svg';
+import wwwIcon from '../../assets/result-page/www.svg'; 
+import shareIcon from '../../assets/result-page/share.svg';
+import addressIcon from '../../assets/result-page/address.svg';
+import './result-page.css';
 
 function ResultPage({setNavigation, places}) {
   const place = places[Math.floor(Math.random()*places.length)];
@@ -39,21 +42,29 @@ function ResultPage({setNavigation, places}) {
         </Marker>
       </Map>
       <div className="result-container">
-        <div className="text-contaier">
-        <p className="location-name">Münchner Volkstheater</p>
-        <p className="location-address">Tumblingerstraße 29, 80337 München</p>
-        </div>
-        <img className='location-image' src={theatre}></img>
         <div className="text-container">
-          <p></p>
+          <button className='back-button back' onClick={()=>setNavigation('MEETING')}> 
+            <img src={backButton} alt="back"></img>
+          </button>
+          <p className="location-name">Münchner Volkstheater</p>
+          <div className='text-div'>
+            <img src={addressIcon} alt="address" className='icon'></img>
+            <p className="location-address">Tumblingerstraße 29, 80337 München</p>
+          </div>
+          <div className="text-div">
+            <img src={wwwIcon} alt="www" className='icon'></img>
+            <a className="location-website" href="https://www.muenchner-volkstheater.de" target="_blank">visit website</a>
+        </div>
         </div>
         <button 
           className='button-submit share'  
           onClick={()=>shareOnMobile({
-            text: "Let's meet here",
             url: "https://www.muenchner-volkstheater.de",
             title: "React-Mobile-Share",
-          })}>share!</button>
+          })}>
+            share location!
+        </button>
+        <img className='location-image' src={theatre}></img>
       </div>
     </div>
   )

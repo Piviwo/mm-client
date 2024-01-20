@@ -31,6 +31,7 @@ function MainMap({marker, setMarker, navigation, places}) {
       longitude: event.lngLat.lng,
       latitude: event.lngLat.lat,
     });
+    //setAddress('Your Specific String Value');
   }, []);
 
   return (

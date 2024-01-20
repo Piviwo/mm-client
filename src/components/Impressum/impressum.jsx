@@ -6,11 +6,21 @@ function Impressum({}) {
 		<div className='outer-container'>
 			<div className='about-container'>
 				<h1>about</h1>
-				<p>Explore Munich like never before with our custom interactive map, designed by students from the Erasmus Mundus Cartography Master program. Created to simplify meeting point selection, our app goes beyond, allowing personalization and the inclusion of your favorite spots. Make your Munich exploration more enjoyable and efficient – discover the city on your terms with our unique map!</p>
+				<p>Welcome to our easy going webapp! &#128155;
+				<br></br><br></br>
+				Explore Munich with our custom interactive map, designed within the mapping project of the Erasmus Mundus Cartography Master program. 
+				<br></br><br></br>
+				Our vision was to simplify the selection of place to meet up within our group. But our app goes beyond, allowing us too include new favorite spots that we have discovered resulting in a unique and personalized group-map. &#128506; 
+				<br></br><br></br>
+				Enjoy exploring our webapp! &#128640;</p>
 			</div>
 			<div className="impressum-container">
-				<h1>Impressum</h1>
-				<p>©2024 Pia Wolffram</p>
+				<h2>Impressum</h2>
+				<p className='text-small'>Pia Wolffram</p>
+				<p className='text-small'>Jagowstraße 22</p>
+				<p className='text-small'>10555 Berlin</p>
+				<br></br>
+				<p className='text-small'>©2024 Pia Wolffram</p>
 			</div>
 		</div>
 	)
