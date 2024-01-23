@@ -3,12 +3,16 @@ import './new-place-form.css';
 import MainMap from '../Map/main-map';
 import backButton from '../../assets/close-button.svg'
 
-function PlaceForm({marker, setMarker, places, navigation, setNavigation}) {
+function PlaceForm({marker, setMarker, places, navigation, setNavigation, street, setStreet}) {
   const initialState = { name: '', image: '', type: ''}
   const [formData, setFormData] = useState(initialState);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value});
+    if(e.target.name == 'address'){
+      setStreet(e.target.value)
+    } else{
+      setFormData({ ...formData, [e.target.name]: e.target.value});
+    }
   };
 
   const hiddenFileInput = useRef(null);
@@ -35,6 +39,7 @@ function PlaceForm({marker, setMarker, places, navigation, setNavigation}) {
       const jsonResponse = await response.json();
       console.log('json response', jsonResponse);
       setFormData({...formData, name: '', image: '', type: ''});
+      setStreet('')
       setNavigation('MAP')
     } else {
       console.error('Error:', response.status);
@@ -43,7 +48,7 @@ function PlaceForm({marker, setMarker, places, navigation, setNavigation}) {
 
   return (
     <div className='map-form-container'>
-    <MainMap marker={marker} setMarker={setMarker} places={places} navigation={navigation}></MainMap>
+    <MainMap marker={marker} setMarker={setMarker} places={places} navigation={navigation} street={street} setStreet={setStreet}></MainMap>
     <div className='form-container'>
       <button className='back-button' onClick= {() => {setNavigation('MAP')}}>
         <img src={backButton} alt="Close"></img>
@@ -51,7 +56,7 @@ function PlaceForm({marker, setMarker, places, navigation, setNavigation}) {
       <h2>let's add a new place!</h2>
       <form action="" onSubmit={handleSubmit}>
         <input type="text" id="name" name="name" required  value={formData.name} onChange={handleChange} placeholder="name"/>
-        <input type="text" id="address" name="address" placeholder="address"/>
+        <input type="text" id="address" name="address" placeholder="address" value={street} onChange={handleChange}/>
         <select type="text" id="type" name="type" required value={formData.type} onChange={handleChange}>
           <option value="" disabled>select a location type</option>
           <option value="bar">bar</option>

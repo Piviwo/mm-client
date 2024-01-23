@@ -5,7 +5,7 @@ import './main-map.css';
 import pinakothekImage from '../../assets/pinakothek.jpeg';
 import stockImage from '../../assets/stock-image.jpeg';
 
-function MainMap({marker, setMarker, navigation, places}) {
+function MainMap({marker, setMarker, navigation, places, street, setStreet}) {
   const [popupInfo, setPopupInfo] = useState(null);
 
   const pins = useMemo(
@@ -32,8 +32,9 @@ function MainMap({marker, setMarker, navigation, places}) {
       longitude: event.lngLat.lng,
       latitude: event.lngLat.lat,
     });
-    //setAddress('Your Specific String Value');
+    setStreet('Zieblandstr. 41, 80798 München');
   }, []);
+
 
   return (
     <Map
@@ -51,8 +52,7 @@ function MainMap({marker, setMarker, navigation, places}) {
           longitude={marker.longitude}
           latitude={marker.latitude}
           draggable={true}
-          onDragEnd={onMarkerDragEnd}
-        >
+          onDragEnd={onMarkerDragEnd}>
           <Pin type={"draggable-marker-blue"} className={'marker'}/>
         </Marker>
       )}

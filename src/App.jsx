@@ -11,6 +11,7 @@ function App() {
   const [navigation, setNavigation] = useState('MAP');
   const [marker, setMarker] = useState({ longitude: 11.576040415348473, latitude: 48.145493694955945 });
   const [places, setPlaces] = useState([]);
+  const [street, setStreet] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,11 +33,19 @@ function App() {
   return (
     <div className='main-container'>
       <Header setNavigation={setNavigation}></Header>
-      {navigation === 'MAP' && places &&
-        <MainMap marker={marker} setMarker={setMarker} navigation={navigation} places={places}></MainMap>
+      {navigation === 'MAP' && places.length>0 &&
+        <MainMap marker={marker} setMarker={setMarker} navigation={navigation} places={places} street={street} setStreet={setStreet}></MainMap>
       }
-      {navigation === 'PLACE' && places &&
-        <PlaceForm marker={marker} setMarker={setMarker} navigation={navigation} setNavigation={setNavigation} places={places}></PlaceForm>
+      {navigation === 'PLACE' &&
+        <PlaceForm 
+          marker={marker} 
+          setMarker={setMarker} 
+          navigation={navigation} 
+          setNavigation={setNavigation} 
+          places={places}
+          street={street}
+          setStreet={setStreet}>
+        </PlaceForm>
       }
       {navigation === 'MEETING' &&
         <Meeting setNavigation={setNavigation}></Meeting>
