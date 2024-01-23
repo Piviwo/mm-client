@@ -48,7 +48,7 @@ function Meeting({setNavigation}) {
 
   return (
     <div className="meeting-container">
-      <button className='back-button' onClick= {() => {setNavigation('MAP')}}>
+      <button className='back-button back-meeting' onClick= {() => {setNavigation('MAP')}}>
         <img src={backButton} alt="Close"></img>
       </button>
       <h2>let's plan an activity!</h2>

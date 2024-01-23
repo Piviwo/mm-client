@@ -4,12 +4,30 @@ import Pin from '../../components/Map/Pins/pin.jsx';
 import { shareOnMobile } from 'react-mobile-share';
 import backButton from '../../assets/result-page/back-button.svg';
 import wwwIcon from '../../assets/result-page/www.svg'; 
+import clock from '../../assets/result-page/clock.svg'; 
 import shareIcon from '../../assets/result-page/share.svg';
 import addressIcon from '../../assets/result-page/address.svg';
 import './result-page.css';
 
 function ResultPage({setNavigation, places}) {
   const place = places[Math.floor(Math.random()*places.length)];
+
+  const handleShare = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: 'React-Mobile-Share',
+        url: 'https://www.muenchner-volkstheater.de',
+      })
+        .then(() => console.log('Shared successfully'))
+        .catch((error) => console.error('Error sharing:', error));
+    } else {
+      console.log('Web Share API not supported');
+      shareOnMobile({
+        url: 'https://www.muenchner-volkstheater.de',
+        title: 'React-Mobile-Share',
+      });
+    }
+  };
 
   return(
     <div className="outer-result-container">
@@ -43,9 +61,6 @@ function ResultPage({setNavigation, places}) {
       </Map>
       <div className="result-container">
         <div className="text-container">
-          <button className='back-button back' onClick={()=>setNavigation('MEETING')}> 
-            <img src={backButton} alt="back"></img>
-          </button>
           <p className="location-name">Münchner Volkstheater</p>
           <div className='text-div'>
             <img src={addressIcon} alt="address" className='icon'></img>
@@ -53,17 +68,23 @@ function ResultPage({setNavigation, places}) {
           </div>
           <div className="text-div">
             <img src={wwwIcon} alt="www" className='icon'></img>
-            <a className="location-website" href="https://www.muenchner-volkstheater.de" target="_blank">visit website</a>
+            <a className="location-website" href="https://www.muenchner-volkstheater.de" target="_blank">www.muenchner-volkstheater.de</a>
+          </div>
+          <div className="text-div">
+            <img src={clock} alt="clock" className='icon'></img>
+            <a className="location-address">Open · closes at 11pm</a>
+          </div>
         </div>
+        <div className='buttons-container'>
+        <button className='back-button back' onClick={()=>setNavigation('MEETING')}> 
+            <img src={backButton} alt="back"></img>
+          </button>
+          <button 
+            className='button-submit share'  
+            onClick={handleShare}>
+              share location!
+          </button>
         </div>
-        <button 
-          className='button-submit share'  
-          onClick={()=>shareOnMobile({
-            url: "https://www.muenchner-volkstheater.de",
-            title: "React-Mobile-Share",
-          })}>
-            share location!
-        </button>
         <img className='location-image' src={theatre}></img>
       </div>
     </div>

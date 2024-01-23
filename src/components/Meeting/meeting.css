@@ -1,6 +1,13 @@
 .meeting-container {
   margin-top: 50px;
   width: 80%;
+  position: relative;
+
+  .back-meeting{
+    position: absolute;
+    top: 10px;
+    right: -10%;
+  }
 }
 
 .checkbox-container {
@@ -23,7 +30,7 @@ label.input-label {
 }
 
 span.name {
-  font-size: small;
+  font-size: medium;
   color: white;
   position: relative;
   display: inline-block;
@@ -77,6 +84,7 @@ select {
     5px 5px,
     1px 1.5em;
   background-repeat: no-repeat;
+  color: black;
 }
 
 button.suggestion{
@@ -88,9 +96,4 @@ button.suggestion{
 	border:1px solid #ffaa00;
     color: #ffaa00;
     background: white;
-}
-
-.back-button{
-  right: 8px;
-  top: 60px;
 }

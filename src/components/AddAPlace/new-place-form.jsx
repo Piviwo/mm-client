@@ -45,11 +45,11 @@ function PlaceForm({marker, setMarker, places, navigation, setNavigation}) {
     <div className='map-form-container'>
     <MainMap marker={marker} setMarker={setMarker} places={places} navigation={navigation}></MainMap>
     <div className='form-container'>
+      <button className='back-button' onClick= {() => {setNavigation('MAP')}}>
+        <img src={backButton} alt="Close"></img>
+      </button>
       <h2>let's add a new place!</h2>
       <form action="" onSubmit={handleSubmit}>
-        <button className='back-button' onClick= {() => {setNavigation('MAP')}}>
-        <img src={backButton} alt="Close"></img>
-        </button>
         <input type="text" id="name" name="name" required  value={formData.name} onChange={handleChange} placeholder="name"/>
         <input type="text" id="address" name="address" placeholder="address"/>
         <select type="text" id="type" name="type" required value={formData.type} onChange={handleChange}>

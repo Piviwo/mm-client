@@ -37,7 +37,7 @@ function Pin({type, className}) {
 
   return (
     <div className={"pin"}>
-      <img src={source} alt={type} className={className} height={18}/>
+      <img src={source} alt={type} className={className} height={20}/>
     </div>
   );
 }

@@ -7,7 +7,8 @@
 
 .place:hover,
 .place:active{
-  background-color: transparent;
+  color: transparent !important;
+  background: transparent !important;
   border:0;
 }
 

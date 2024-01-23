@@ -1,6 +1,6 @@
 div.maplibregl-popup {
   max-width: 300px;
-  width:200px
+  width:230px;
 }
 
 button.maplibregl-popup-close-button {
@@ -17,6 +17,11 @@ button.maplibregl-popup-close-button {
 .popup-info-textbox {
   display: flex;
   flex-direction: column;
+
+  a{
+    color:black;
+    text-underline-offset: 2px;
+  }
 }
 
 .popup-info-text {

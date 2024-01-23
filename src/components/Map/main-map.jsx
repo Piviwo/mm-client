@@ -2,6 +2,7 @@ import {Map, Marker,Popup} from 'react-map-gl/maplibre';
 import {useState, useMemo, useCallback} from 'react';
 import Pin from './Pins/pin.jsx';
 import './main-map.css';
+import pinakothekImage from '../../assets/pinakothek.jpeg';
 import stockImage from '../../assets/stock-image.jpeg';
 
 function MainMap({marker, setMarker, navigation, places}) {
@@ -64,11 +65,11 @@ function MainMap({marker, setMarker, navigation, places}) {
             style={{maxWidth:'300px'}}
           >
             <div className="popup-info-textbox">
-              <p className="popup-info-text">{popupInfo.name}</p>
+              <a href='https://www.pinakothek.de/de/neue-pinakothek' target="_blank"><p className="popup-info-text">{popupInfo.name}</p></a>
               <p className="popup-info-text">{popupInfo.type}</p>
               <p className="popup-info-text-small">{'Barer Str. 29, 80799 München'}</p>
             </div>
-            <img width="100%" src={stockImage} />
+            <img width="100%" src={popupInfo.name == 'Neue Pinakothek' ? pinakothekImage : stockImage} />
           </Popup>
         )}
     </Map>
