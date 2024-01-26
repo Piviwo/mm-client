@@ -93,11 +93,11 @@
     background-color:white;
   }
   
-  button.place {
+  button.button-place {
     background: linear-gradient(0.25turn, #3CB4D2, #7CC1A0);
   }
-  .place:disabled,
-  .place:hover{
+  .button-place:disabled,
+  .button-place:hover{
     border:1px solid #3CB4D2;
     color: #3CB4D2;
     background: white;

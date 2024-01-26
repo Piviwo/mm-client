@@ -30,9 +30,22 @@ function App() {
     fetchData();
   }, []);
 
+  const fetchOnClick = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/api/places');
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
+      const data = await response.json();
+      setPlaces(data.places);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
   return (
     <div className='main-container'>
-      <Header setNavigation={setNavigation}></Header>
+      <Header setNavigation={setNavigation} navigation={navigation}></Header>
       {navigation === 'MAP' && places.length>0 &&
         <MainMap marker={marker} setMarker={setMarker} navigation={navigation} places={places} street={street} setStreet={setStreet}></MainMap>
       }
@@ -44,7 +57,8 @@ function App() {
           setNavigation={setNavigation} 
           places={places}
           street={street}
-          setStreet={setStreet}>
+          setStreet={setStreet}
+          fetchOnClick={fetchOnClick}>
         </PlaceForm>
       }
       {navigation === 'MEETING' &&

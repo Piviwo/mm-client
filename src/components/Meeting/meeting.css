@@ -18,11 +18,17 @@
 }
 
 .checkbox-item {
+  outline:none;
   margin: 3px;
+  div{
+    outline: none;
+  }
 }
 
 label.input-label {
   cursor: pointer;
+  outline:none;
+  outline: none;
 
   input[type="checkbox"] {
     display: none;

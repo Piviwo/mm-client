@@ -3,7 +3,7 @@ import './new-place-form.css';
 import MainMap from '../Map/main-map';
 import backButton from '../../assets/close-button.svg'
 
-function PlaceForm({marker, setMarker, places, navigation, setNavigation, street, setStreet}) {
+function PlaceForm({marker, setMarker, places, navigation, setNavigation, street, setStreet, fetchOnClick}) {
   const initialState = { name: '', image: '', type: ''}
   const [formData, setFormData] = useState(initialState);
 
@@ -41,6 +41,7 @@ function PlaceForm({marker, setMarker, places, navigation, setNavigation, street
       setFormData({...formData, name: '', image: '', type: ''});
       setStreet('')
       setNavigation('MAP')
+      fetchOnClick()
     } else {
       console.error('Error:', response.status);
     }
@@ -102,7 +103,7 @@ function PlaceForm({marker, setMarker, places, navigation, setNavigation, street
             />
           </label>} */}
         
-        <button type="submit" className='button-submit place' disabled={!isFormValid()}>add place to map!</button>
+        <button type="submit" className='button-submit button-place' disabled={!isFormValid()}>add place to map!</button>
       </form>
     </div>
     </div>

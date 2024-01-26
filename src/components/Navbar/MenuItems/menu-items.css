@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0 10px 0 10px;
+  padding: 0 10px 0 0px;
 
 }
 
@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 0px;
 }
 
 .button-container{
@@ -26,7 +26,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 45px;
+  height: 50px;
+  padding: 0 5px;
 }
 
 .button-text{
@@ -61,5 +62,26 @@
 }
 .activity-button{
   background-image: url('../../../assets/menu/friends.svg');
+}
+
+.active-map{
+  background-color: #e2f5ec;
+  .map-button{
+    background-color:inherit;
+  }
+}
+
+.active-place{
+  background-color: #daf0f6;
+  .place-button{
+    background-color: inherit;
+  }
+}
+
+.active-meeting{
+  background-color: #f4f0e2;
+  .activity-button{
+    background-color: inherit;
+  }
 }
 

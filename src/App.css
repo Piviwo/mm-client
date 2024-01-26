@@ -38,3 +38,7 @@
 	justify-content: center;
 }
 
+input,textarea,button,select,label,a{
+	outline: 0 !important;
+	-webkit-tap-highlight-color: transparent;
+  }

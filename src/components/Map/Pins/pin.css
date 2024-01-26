@@ -9,7 +9,7 @@
 .place:active{
   color: transparent !important;
   background: transparent !important;
-  border:0;
+  border:0 !important;
 }
 
 .marker{

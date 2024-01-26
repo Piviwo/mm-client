@@ -41,20 +41,20 @@ function ResultPage({setNavigation, places}) {
         mapStyle="https://api.maptiler.com/maps/streets-v2/style.json?key=hInnHZLgrLFW1U6e6Wtv"
       >
         <Marker
-          longitude={11.576124}
-          latitude={48.137154}
+          longitude={11.555450283494345}
+          latitude={48.12379822994768}
         >
           <Pin type={"draggable-marker-green"} className={'marker'}/>
         </Marker>
         <Marker
-          longitude={11.576124}
-          latitude={48.145}
+          longitude={11.55}
+          latitude={48.14}
         >
           <Pin type={"pin-athina"} className={'marker'}/>
         </Marker>
         <Marker
-          longitude={11.6}
-          latitude={48.139}
+          longitude={11.59}
+          latitude={48.13}
         >
           <Pin type={"pin-pia"} className={'marker'}/>
         </Marker>
