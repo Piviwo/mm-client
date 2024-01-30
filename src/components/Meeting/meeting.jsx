@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import './meeting.css';
 import PEOPLE from '../../data/people.json';
 import backButton from '../../assets/close-button.svg'
@@ -7,7 +7,6 @@ function Meeting({setNavigation, selectedActivity, setSelectedActivity, selected
 
   const handleActivityChange = (e) => {
     setSelectedActivity(e.target.value)
-    console.log(e.target.value)
   };
 
   const suggestActivity = () => {
@@ -20,30 +19,37 @@ function Meeting({setNavigation, selectedActivity, setSelectedActivity, selected
   };
 
   const data = PEOPLE.map(item => item.name).sort();
-  const handleCheckboxChange = (person) => {
-    if (selectedPeople.includes(person)) {
-      setSelectedPeople(selectedPeople => { return selectedPeople.filter(p => p !== person) })
-    } else {
-      setSelectedPeople([...selectedPeople, person])
-    }
-  }
+    const handleCheckboxChange = (person) => {
+      setSelectedPeople((selectedPeople) => {
+        if (selectedPeople.includes(person)) {
+          return selectedPeople.filter((p) => p !== person);
+        } else {
+          return [...selectedPeople, person];
+        }
+      });
+      console.log(selectedPeople)
+    };
 
   const people = useMemo(
-    () => data.map((person, index) => (
-      <div className="checkbox-item" key={index}>
-        <div>
-          <label className='input-label'>
-            <input
-              type="checkbox"
-              id={index}
-              value={person}
-              onChange={() => handleCheckboxChange(person)}
-            />
-            <span className='name'>{person}</span>
-          </label>
+    () =>
+      data.map((person, index) => (
+        <div className="checkbox-item" key={index}>
+          <div>
+            <label className={`input-label ${selectedPeople.includes(person) ? 'selected' : ''}`}>
+              <input
+                type="checkbox"
+                id={index}
+                value={person}
+                checked={selectedPeople.includes(person)}
+                onChange={() => handleCheckboxChange(person)}
+              />
+              <span className={`name ${selectedPeople.includes(person) ? 'selected' : ''}`}>{person}</span>
+            </label>
+          </div>
         </div>
-      </div>
-    )), [])
+      )),
+    [data, selectedPeople]
+  );
 
     const clearSelection = () => {
       setNavigation('MAP')
