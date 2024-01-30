@@ -47,11 +47,16 @@ function PlaceForm({marker, setMarker, places, navigation, setNavigation, street
     }
   };
 
+  const clearForm = () => {
+    setNavigation('MAP')
+    setStreet('')
+  }
+
   return (
     <div className='map-form-container'>
     <MainMap marker={marker} setMarker={setMarker} places={places} navigation={navigation} street={street} setStreet={setStreet}></MainMap>
     <div className='form-container'>
-      <button className='back-button' onClick= {() => {setNavigation('MAP')}}>
+      <button className='back-button' onClick= {clearForm}>
         <img src={backButton} alt="Close"></img>
       </button>
       <h2>let's add a new place!</h2>
@@ -86,7 +91,7 @@ function PlaceForm({marker, setMarker, places, navigation, setNavigation, street
             style={{display:'none'}}
           />
 
-          {/* {<label className="label-upload">
+          <label className="label-upload">
             upload an image
             <button 
               type="button"
@@ -101,7 +106,7 @@ function PlaceForm({marker, setMarker, places, navigation, setNavigation, street
               value={formData.image}
               style={{display:'none'}}
             />
-          </label>} */}
+          </label>
         
         <button type="submit" className='button-submit button-place' disabled={!isFormValid()}>add place to map!</button>
       </form>

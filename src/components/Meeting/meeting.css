@@ -40,7 +40,7 @@ span.name {
   color: white;
   position: relative;
   display: inline-block;
-  padding: 5px 10px;
+  padding: 3px 8px;
   border-radius: 30px;
   transition: 0.5s;
   user-select: none;

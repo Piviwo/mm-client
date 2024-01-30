@@ -12,6 +12,8 @@ function App() {
   const [marker, setMarker] = useState({ longitude: 11.576040415348473, latitude: 48.145493694955945 });
   const [places, setPlaces] = useState([]);
   const [street, setStreet] = useState('');
+  const [selectedActivity, setSelectedActivity] = useState('');
+  const [selectedPeople, setSelectedPeople] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -62,10 +64,21 @@ function App() {
         </PlaceForm>
       }
       {navigation === 'MEETING' &&
-        <Meeting setNavigation={setNavigation}></Meeting>
+        <Meeting 
+          setNavigation={setNavigation}
+          selectedActivity={selectedActivity}
+          setSelectedActivity={setSelectedActivity}
+          selectedPeople={selectedPeople}
+          setSelectedPeople={setSelectedPeople}>
+        </Meeting>
       }
       {navigation === 'SUCCESS' &&
-        <ResultPage setNavigation={setNavigation} places={places}></ResultPage>
+        <ResultPage 
+          setNavigation={setNavigation} 
+          places={places}
+          selectedPeople={selectedPeople}
+          selectedActivity={selectedActivity}>
+        </ResultPage>
       }
       {navigation === 'IMPRESSUM' &&
         <Impressum></Impressum>

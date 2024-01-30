@@ -9,9 +9,8 @@ import shareIcon from '../../assets/result-page/share.svg';
 import addressIcon from '../../assets/result-page/address.svg';
 import './result-page.css';
 
-function ResultPage({setNavigation, places}) {
+function ResultPage({setNavigation, places, selectedPeople, selectedActivity}) {
   const place = places[Math.floor(Math.random()*places.length)];
-
   const handleShare = () => {
     if (navigator.share) {
       navigator.share({

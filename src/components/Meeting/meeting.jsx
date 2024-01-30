@@ -3,12 +3,11 @@ import './meeting.css';
 import PEOPLE from '../../data/people.json';
 import backButton from '../../assets/close-button.svg'
 
-function Meeting({setNavigation}) {
-  const [selectedActivity, setSelectedActivity] = useState('');
-  const [selectedPeople, setSelectedPeople] = useState([])
+function Meeting({setNavigation, selectedActivity, setSelectedActivity, selectedPeople, setSelectedPeople}) {
 
   const handleActivityChange = (e) => {
     setSelectedActivity(e.target.value)
+    console.log(e.target.value)
   };
 
   const suggestActivity = () => {
@@ -46,9 +45,15 @@ function Meeting({setNavigation}) {
       </div>
     )), [])
 
+    const clearSelection = () => {
+      setNavigation('MAP')
+      setSelectedActivity('')
+      setSelectedPeople([])
+    }
+
   return (
     <div className="meeting-container">
-      <button className='back-button back-meeting' onClick= {() => {setNavigation('MAP')}}>
+      <button className='back-button back-meeting' onClick= {clearSelection}>
         <img src={backButton} alt="Close"></img>
       </button>
       <h2>let's plan an activity!</h2>
