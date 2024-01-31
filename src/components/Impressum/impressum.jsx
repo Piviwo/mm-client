@@ -17,8 +17,7 @@ function Impressum({}) {
 			<div className="impressum-container">
 				<h2>Impressum</h2>
 				<p className='text-small'>Pia Wolffram</p>
-				<p className='text-small'>Jagowstraße 22</p>
-				<p className='text-small'>10555 Berlin</p>
+				<p className='text-small'>TU Munich</p>
 				<br></br>
 				<p className='text-small'>©2024 Pia Wolffram</p>
 			</div>

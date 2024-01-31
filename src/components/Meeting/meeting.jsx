@@ -11,7 +11,7 @@ function Meeting({setNavigation, selectedActivity, setSelectedActivity, selected
 
   const suggestActivity = () => {
     setNavigation('SUCCESS');
-    event.preventDefault();
+    //event.preventDefault();
   }
 
   const isFormValid = () => {
@@ -19,43 +19,40 @@ function Meeting({setNavigation, selectedActivity, setSelectedActivity, selected
   };
 
   const data = PEOPLE.map(item => item.name).sort();
-    const handleCheckboxChange = (person) => {
-      setSelectedPeople((selectedPeople) => {
-        if (selectedPeople.includes(person)) {
-          return selectedPeople.filter((p) => p !== person);
-        } else {
-          return [...selectedPeople, person];
-        }
-      });
-      console.log(selectedPeople)
-    };
 
-  const people = useMemo(
-    () =>
-      data.map((person, index) => (
-        <div className="checkbox-item" key={index}>
-          <div>
-            <label className={`input-label ${selectedPeople.includes(person) ? 'selected' : ''}`}>
-              <input
-                type="checkbox"
-                id={index}
-                value={person}
-                checked={selectedPeople.includes(person)}
-                onChange={() => handleCheckboxChange(person)}
-              />
-              <span className={`name ${selectedPeople.includes(person) ? 'selected' : ''}`}>{person}</span>
-            </label>
-          </div>
-        </div>
-      )),
-    [data, selectedPeople]
-  );
+  const handleCheckboxChange = (person) => {
+    console.log("Previous State:", selectedPeople);
+    setSelectedPeople((selectedPeople) => {
+      if (selectedPeople.includes(person)) {
+        console.log("Updated State 1", selectedPeople.filter((p) => p !== person))
+        return selectedPeople.filter((p) => p !== person);
+      } else {
+        console.log("Updated State 2", [...selectedPeople, person])
+        return [...selectedPeople, person];
+      }
+    });
+  };
 
-    const clearSelection = () => {
-      setNavigation('MAP')
-      setSelectedActivity('')
-      setSelectedPeople([])
-    }
+  const people = data.map((person, index) => (
+    <div className="checkbox-item" key={index}>
+      <label className={`input-label ${selectedPeople.includes(person) ? 'selected' : ''}`}>
+        <input
+          type="checkbox"
+          id={index}
+          value={person}
+          checked={selectedPeople.includes(person)}
+          onChange={() => handleCheckboxChange(person)}
+        />
+        <span className={`name ${selectedPeople.includes(person) ? 'selected' : ''}`}>{person}</span>
+      </label>
+    </div>
+  ))
+
+  const clearSelection = () => {
+    setNavigation('MAP')
+    setSelectedActivity('')
+    setSelectedPeople([])
+  }
 
   return (
     <div className="meeting-container">
