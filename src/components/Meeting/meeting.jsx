@@ -21,13 +21,10 @@ function Meeting({setNavigation, selectedActivity, setSelectedActivity, selected
   const data = PEOPLE.map(item => item.name).sort();
 
   const handleCheckboxChange = (person) => {
-    console.log("Previous State:", selectedPeople);
     setSelectedPeople((selectedPeople) => {
       if (selectedPeople.includes(person)) {
-        console.log("Updated State 1", selectedPeople.filter((p) => p !== person))
         return selectedPeople.filter((p) => p !== person);
       } else {
-        console.log("Updated State 2", [...selectedPeople, person])
         return [...selectedPeople, person];
       }
     });
@@ -40,8 +37,8 @@ function Meeting({setNavigation, selectedActivity, setSelectedActivity, selected
           type="checkbox"
           id={index}
           value={person}
-          checked={selectedPeople.includes(person)}
           onChange={() => handleCheckboxChange(person)}
+          checked={selectedPeople.includes(person)}
         />
         <span className={`name ${selectedPeople.includes(person) ? 'selected' : ''}`}>{person}</span>
       </label>

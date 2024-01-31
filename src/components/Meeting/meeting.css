@@ -45,8 +45,10 @@ span.name {
   transition: 0.5s;
   user-select: none;
   overflow: hidden;
+}
 
-  &:hover {
+@media (min-width: 900px) {
+  span.name:hover{
     color: white;
     background-color: #ffaa00;
     border: 1px solid #ffaa00;
