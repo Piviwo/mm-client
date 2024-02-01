@@ -6,8 +6,8 @@ import theatre from '../../../assets/map-items/theatre.svg';
 import cafe from '../../../assets/map-items/cafe.svg';
 import dragBlue from '../../../assets/draggable-place-blue.svg';
 import dragGreen from '../../../assets/draggable-place-green.svg';
-import pinAthina from '../../../assets/people/pin-athina.svg';
-import pinPia from '../../../assets/people/pin-pia.svg';
+import pin1 from '../../../assets/people/pin_1.svg';
+import pin2 from '../../../assets/people/pin_2.svg';
 import './pin.css';
 
 
@@ -29,10 +29,10 @@ function Pin({type, className}) {
       source = dragBlue;
   }else if(type == 'draggable-marker-green'){
     source = dragGreen;
-  } else if(type == 'pin-athina'){
-    source = pinAthina;
-  } else if(type == 'pin-pia'){
-    source = pinPia;
+  } else if(type == 'pin-2'){
+    source = pin2;
+  } else if(type == 'pin-1'){
+    source = pin1;
   }
 
   return (

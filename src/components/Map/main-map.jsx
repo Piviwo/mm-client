@@ -65,9 +65,9 @@ function MainMap({marker, setMarker, navigation, places, street, setStreet}) {
             style={{maxWidth:'300px'}}
           >
             <div className="popup-info-textbox">
-              <a href='https://www.pinakothek.de/de/neue-pinakothek' target="_blank"><p className="popup-info-text">{popupInfo.name}</p></a>
+              <a href={'//'+popupInfo.link} target="_blank"><p className="popup-info-text">{popupInfo.name}</p></a>
               <p className="popup-info-text">{popupInfo.type}</p>
-              <p className="popup-info-text-small">{'Barer Str. 29, 80799 München'}</p>
+              <p className="popup-info-text-small">{popupInfo.address}</p>
             </div>
             <img width="100%" src={popupInfo.name == 'Neue Pinakothek' ? pinakothekImage : stockImage} />
           </Popup>

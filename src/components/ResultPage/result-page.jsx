@@ -10,20 +10,21 @@ import addressIcon from '../../assets/result-page/address.svg';
 import './result-page.css';
 
 function ResultPage({setNavigation, places, selectedPeople, selectedActivity}) {
-  const place = places[Math.floor(Math.random()*places.length)];
-  const handleShare = () => {
+  const place = places.filter(p => p.name == 'Münchner Volkstheater')[0]
+  console.log(place)
+  const handleShare = (place) => {
     if (navigator.share) {
       navigator.share({
-        title: 'React-Mobile-Share',
-        url: 'https://www.muenchner-volkstheater.de',
+        title: place.name,
+        url: '//'+place.link,
       })
         .then(() => console.log('Shared successfully'))
         .catch((error) => console.error('Error sharing:', error));
     } else {
       console.log('Web Share API not supported');
       shareOnMobile({
-        url: 'https://www.muenchner-volkstheater.de',
-        title: 'React-Mobile-Share',
+        url: place.name,
+        title: '//'+place.link,
       });
     }
   };
@@ -32,42 +33,42 @@ function ResultPage({setNavigation, places, selectedPeople, selectedActivity}) {
     <div className="outer-result-container">
       <Map
         initialViewState={{
-          longitude: 11.576124,
-          latitude: 48.137154,
+          longitude: place.longitude,
+          latitude: place.latitude,
           zoom: 12
         }}
         style={{width: '100vw', height: '30vh'}}
         mapStyle="https://api.maptiler.com/maps/streets-v2/style.json?key=hInnHZLgrLFW1U6e6Wtv"
       >
         <Marker
-          longitude={11.574}
-          latitude={48.131}
+          longitude={place.longitude}
+          latitude={place.latitude}
         >
           <Pin type={"draggable-marker-green"} className={'marker'}/>
         </Marker>
         <Marker
-          longitude={11.56}
-          latitude={48.135}
+          longitude={11.54}
+          latitude={48.12}
         >
-          <Pin type={"pin-athina"} className={'marker'}/>
+          <Pin type={"pin-1"} className={'marker'}/>
         </Marker>
         <Marker
-          longitude={11.59}
-          latitude={48.13}
+          longitude={11.58}
+          latitude={48.127}
         >
-          <Pin type={"pin-pia"} className={'marker'}/>
+          <Pin type={"pin-2"} className={'marker'}/>
         </Marker>
       </Map>
       <div className="result-container">
         <div className="text-container">
-          <p className="location-name">Münchner Volkstheater</p>
+          <p className="location-name">{place.name}</p>
           <div className='text-div'>
             <img src={addressIcon} alt="address" className='icon'></img>
-            <p className="location-address">Tumblingerstraße 29, 80337 München</p>
+            <p className="location-address">{place.address}</p>
           </div>
           <div className="text-div">
             <img src={wwwIcon} alt="www" className='icon'></img>
-            <a className="location-website" href="https://www.muenchner-volkstheater.de" target="_blank">www.muenchner-volkstheater.de</a>
+            <a className="location-website" href={'//'+place.link} target="_blank">{place.link}</a>
           </div>
           <div className="text-div">
             <img src={clock} alt="clock" className='icon'></img>
@@ -80,7 +81,7 @@ function ResultPage({setNavigation, places, selectedPeople, selectedActivity}) {
           </button>
           <button 
             className='button-submit share'  
-            onClick={handleShare}>
+            onClick={() => handleShare(place)}>
               share location!
           </button>
         </div>

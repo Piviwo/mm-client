@@ -6,7 +6,7 @@ function Impressum({}) {
 		<div className='outer-container'>
 			<div className='about-container'>
 				<h1>about</h1>
-				<p>Welcome to our easy going webapp! &#128155;
+				<p>Welcome to our map&meet web app! &#128155;
 				<br></br><br></br>
 				Explore Munich with our custom interactive map, designed within the mapping project of the Erasmus Mundus Cartography Master program. 
 				<br></br><br></br>

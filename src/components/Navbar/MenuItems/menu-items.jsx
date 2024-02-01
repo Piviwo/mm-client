@@ -20,7 +20,7 @@ function MenuItems({setNavigation, navigation}) {
       </div>
     </div>
     <div className="logo">
-      <h1 className="headline" onClick={()=>setNavigation('IMPRESSUM')}>easy going</h1>
+      <h1 className="headline" onClick={()=>setNavigation('IMPRESSUM')}>map&meet</h1>
     </div>
     </div>
   )

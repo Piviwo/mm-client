@@ -1,3 +1,7 @@
+.maplibregl-ctrl-bottom-right {
+  display: none;
+}
+
 .outer-result-container{
   margin-top: 40px;
 }
