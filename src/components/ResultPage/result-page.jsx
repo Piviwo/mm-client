@@ -11,7 +11,6 @@ import './result-page.css';
 
 function ResultPage({setNavigation, places, selectedPeople, selectedActivity}) {
   const place = places.filter(p => p.name == 'Münchner Volkstheater')[0]
-  console.log(place)
   const handleShare = (place) => {
     if (navigator.share) {
       navigator.share({

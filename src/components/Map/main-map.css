@@ -5,7 +5,9 @@ div.maplibregl-popup {
 
 button.maplibregl-popup-close-button {
   font-size: x-large;
-  color: black
+  color: black;
+  top: 5px;
+  right: -10px;
 }
 
 .maplibregl-popup-content>div {
@@ -37,5 +39,5 @@ button.maplibregl-popup-close-button {
 
 .popup-info-text-small {
   margin: 0;
-  font-size: 11px;
+  font-size: 12px;
 }
