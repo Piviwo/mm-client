@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/places');
+        const response = await fetch('https://map-and-meet-server-c364d0ae21d6.herokuapp.com/api/places');
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
@@ -34,7 +34,7 @@ function App() {
 
   const fetchOnClick = async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/places');
+      const response = await fetch('https://map-and-meet-server-c364d0ae21d6.herokuapp.com/api/places');
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }

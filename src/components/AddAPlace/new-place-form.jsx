@@ -26,7 +26,7 @@ function PlaceForm({marker, setMarker, places, navigation, setNavigation, street
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:3000/api/place', {
+    const response = await fetch('https://map-and-meet-server-c364d0ae21d6.herokuapp.com/api/place', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -91,7 +91,7 @@ function PlaceForm({marker, setMarker, places, navigation, setNavigation, street
             style={{display:'none'}}
           />
 
-          <label className="label-upload">
+          {/*<label className="label-upload">
             upload an image
             <button 
               type="button"
@@ -106,7 +106,7 @@ function PlaceForm({marker, setMarker, places, navigation, setNavigation, street
               value={formData.image}
               style={{display:'none'}}
             />
-          </label>
+  </label>*/}
         
         <button type="submit" className='button-submit button-place' disabled={!isFormValid()}>add place to map!</button>
       </form>
