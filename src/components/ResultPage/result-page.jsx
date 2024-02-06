@@ -1,6 +1,6 @@
 import {Map, Marker} from 'react-map-gl/maplibre';
 import VolkstheaterImage from '../../assets/volkstheater.jpeg';
-import stockImage from '../../assets/stock-image.jpeg';
+import stockImage from '../../assets/stock-images/image-placeholder.jpeg';
 import Pin from '../../components/Map/Pins/pin.jsx';
 import { shareOnMobile } from 'react-mobile-share';
 import backButton from '../../assets/result-page/back-button.svg';

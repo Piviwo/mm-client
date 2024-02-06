@@ -3,7 +3,7 @@ import {useState, useMemo, useCallback} from 'react';
 import Pin from './Pins/pin.jsx';
 import './main-map.css';
 import pinakothekImage from '../../assets/pinakothek.jpeg';
-import stockImage from '../../assets/stock-image.jpeg';
+import stockImage from '../../assets/stock-images/image-placeholder.jpeg';
 import barImage from '../../assets/stock-images/bar-image.png';
 import cinemaImage from '../../assets/stock-images/cinema-image.png';
 import museumImage from '../../assets/stock-images/museum-image.png';
