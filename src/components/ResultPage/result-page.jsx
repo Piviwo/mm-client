@@ -13,6 +13,7 @@ import cinemaImage from '../../assets/stock-images/cinema-image.png';
 import museumImage from '../../assets/stock-images/museum-image.png';
 import restaurantImage from '../../assets/stock-images/restaurant-image.png';
 import theatreImage from '../../assets/stock-images/theatre-image.png';
+import cafeImage from '../../assets/stock-images/cafe-image.png';
 
 function ResultPage({setNavigation, places, selectedPeople, selectedActivity}) {
   const possibleActivities = places.filter(p => p.type == selectedActivity)
@@ -94,6 +95,7 @@ function ResultPage({setNavigation, places, selectedPeople, selectedActivity}) {
             place.type === 'bar' ? barImage :
             place.type === 'cinema' ? cinemaImage :
             place.type === 'museum' ? museumImage :
+            place.type === 'cafe' ? cafeImage :
             place.type === 'restaurant' ? restaurantImage :
             place.type === 'theatre' && (place.name !== 'Münchner Volkstheater') ? theatreImage :
             stockImage

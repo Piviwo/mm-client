@@ -9,6 +9,7 @@ import cinemaImage from '../../assets/stock-images/cinema-image.png';
 import museumImage from '../../assets/stock-images/museum-image.png';
 import restaurantImage from '../../assets/stock-images/restaurant-image.png';
 import theatreImage from '../../assets/stock-images/theatre-image.png';
+import cafeImage from '../../assets/stock-images/cafe-image.png';
 
 function MainMap({marker, setMarker, navigation, places, street, setStreet}) {
   const [popupInfo, setPopupInfo] = useState(null);
@@ -83,6 +84,7 @@ function MainMap({marker, setMarker, navigation, places, street, setStreet}) {
                 popupInfo.type === 'cinema' ? cinemaImage :
                 popupInfo.type === 'museum' ? museumImage :
                 popupInfo.type === 'restaurant' ? restaurantImage :
+                popupInfo.type === 'cafe' ? cafeImageImage :
                 popupInfo.type === 'theatre' ? theatreImage :
                 stockImage
                 }
