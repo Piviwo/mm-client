@@ -90,12 +90,12 @@ function ResultPage({setNavigation, places, selectedPeople, selectedActivity}) {
         </div>
           <img className='location-image' 
           src={
-            place.name === 'Neue Pinakothek' ? VolkstheaterImage :
+            place.name === 'Münchner Volkstheater' ? VolkstheaterImage :
             place.type === 'bar' ? barImage :
             place.type === 'cinema' ? cinemaImage :
             place.type === 'museum' ? museumImage :
             place.type === 'restaurant' ? restaurantImage :
-            place.type === 'theatre' && (place.name !== 'Neue Pinakothek') ? theatreImage :
+            place.type === 'theatre' && (place.name !== 'Münchner Volkstheater') ? theatreImage :
             stockImage
             }
           alt={place.type}>
