@@ -84,7 +84,7 @@ function MainMap({marker, setMarker, navigation, places, street, setStreet}) {
                 popupInfo.type === 'cinema' ? cinemaImage :
                 popupInfo.type === 'museum' ? museumImage :
                 popupInfo.type === 'restaurant' ? restaurantImage :
-                popupInfo.type === 'cafe' ? cafeImageImage :
+                popupInfo.type === 'cafe' ? cafeImage :
                 popupInfo.type === 'theatre' ? theatreImage :
                 stockImage
                 }
