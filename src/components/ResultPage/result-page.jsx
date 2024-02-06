@@ -95,7 +95,7 @@ function ResultPage({setNavigation, places, selectedPeople, selectedActivity}) {
             place.type === 'cinema' ? cinemaImage :
             place.type === 'museum' ? museumImage :
             place.type === 'restaurant' ? restaurantImage :
-            place.type === 'theatre' ? theatreImage :
+            place.type === 'theatre' && (place.name !== 'Neue Pinakothek') ? theatreImage :
             stockImage
             }
           alt={place.type}>
