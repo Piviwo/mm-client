@@ -10,8 +10,8 @@ function Meeting({setNavigation, selectedActivity, setSelectedActivity, selected
   };
 
   const suggestActivity = () => {
+    event.preventDefault();
     setNavigation('SUCCESS');
-    //event.preventDefault();
   }
 
   const isFormValid = () => {
@@ -76,7 +76,7 @@ function Meeting({setNavigation, selectedActivity, setSelectedActivity, selected
         <div className="checkbox-container">
           {people}
         </div>
-        <button type="submit" className='button-submit suggestion' onClick={suggestActivity} disabled={!isFormValid()}>get suggestion!</button>
+        <button type="submit" className='button-submit suggestion' disabled={!isFormValid()}>get suggestion!</button>
       </form>
     </div>
   );
